@@ -1,0 +1,69 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Spam Check by Postmarkapp</title>
+		<meta name="description" content="Instantly check an email's SpamAssassin spam score with with Postmark's SpamAssassin API.">
+		<meta name="viewport" content="width=980">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!--[if lt IE 9]><script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+		<script type="text/javascript" src="./Scripts/SpamCheck/cufon-yui.js"></script>
+		<script type="text/javascript" src="./Scripts/SpamCheck/rockwell.font.js"></script>
+		<script type="text/javascript" src="./Scripts/SpamCheck/SpamCheck.js"></script>
+
+		<link rel="stylesheet" href="./Content/SpamCheck.css" media="all">
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="wrap-beta">
+				<header>
+					<h1><a href="http://postmarkapp.com/">Spam Check by Postmarkapp</a></h1>
+				</header>
+				<div id="main">
+					<div id="or">or</div>
+					<section id="check">
+						<form action="#" method="post">
+							<textarea id="spamassassin_results" rows="10" cols="50" placeholder="Paste an email message including the full headers and content.">
+								abuilding Are you searching for sexual partners in your town? http://www.seeking-sexy-blabla.com/gtf/ 
+								Cl1ck under for biggest database of girls and guys waiting for a d4te! http://www.seeking-sexy-blabla.com/gtf/ 
+								Sincerely, 
+								Earle Blankenship
+							</textarea>
+							<input id="run_check_button" type="submit" value="Check Score" class="button">
+						</form>
+						<p class="hint"><a href="http://mail.google.com/support/bin/answer.py?answer=22454"><strong>Hint</strong> <span>Learn how to get full headers.</span></a></p>
+					</section>
+				</div>
+				<div id="results">
+					<h1>Your email’s SpamAssassin score:</h1>
+					<div id="score">
+						<span class="unknown">?</span>
+						<span class="hide loading" title="Loading&hellip;">Loading&hellip;</span>
+						<span class="hide value">
+							<s></s><b></b><i></i>
+						</span>
+					</div>
+					<div id="envelope-1"></div>
+					<div id="envelope-2"></div>
+					<div id="envelope-3"></div>
+					<div id="inbox"><span id="i1"></span><span id="i2"></span></div>
+				</div>
+				<div id="output">
+					<pre><code></code></pre>
+					<a href="#" class="close">&times;</a>
+				</div>
+				<footer>
+					<p>&copy; <a href="http://www.wildbit.com/">Wildbit, LLC</a>, 2013. All rights reserved.</p>
+				</footer>
+			</div>
+		</div>
+		<!-- Cufon -->
+		<script type="text/javascript"> Cufon.now(); </script>
+	</body>
+</html>

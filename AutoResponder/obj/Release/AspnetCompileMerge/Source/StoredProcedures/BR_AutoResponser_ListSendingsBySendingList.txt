@@ -1,0 +1,23 @@
+﻿CREATE PROCEDURE BR_AutoResponser_ListSendingsBySendingList
+	@param_SendingList int,
+	@param_Tag varchar(50),
+	@param_user_name nvarchar(MAX),
+	@param_grid_column varchar(50),
+	@param_grid_dir varchar(50)
+AS
+BEGIN
+	DECLARE @filter_user nvarchar(MAX)
+	
+	SET @filter_user = ''
+	if(ISNULL(@param_user_name, '') != '')
+	BEGIN
+		SET @filter_user = ' AND (u.firstName LIKE %' + @param_user_name +'% OR u.middleName LIKE %' + @param_user_name +'% OR u.lastName LIKE %' + @param_user_name +'% OR u.email LIKE %' + @param_user_name +'%) ';
+	END	
+	
+	SELECT CAST(s.Unsubscribe AS INT) AS Unsubscribe, CAST(s.OpenMail AS INT) AS OpenMail, CAST(s.Bounce AS INT) AS Bounce, CAST(s.Click AS INT) AS Click, 
+	s.SentDate, u.firstName, u.middleName, u.lastName, t.Id, t.Subject, u.email  
+	FROM BR_AutoResponder_Sending s, BR_Users u, BR_AutoResponder_Template t, BR_AutoResponder_SendingList l 
+	WHERE s.UserId = u.idUser AND t.SendingListid = l.Id AND t.Id = s.TemplateId AND l.Id = @param_SendingList + ' ' + @filter_user
+	ORDER BY + ' ' + @param_grid_column + ' ' + @param_grid_dir
+END
+GO

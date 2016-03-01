@@ -1,0 +1,38 @@
+﻿CREATE PROCEDURE BR_AutoResponser_ListUsersBySendingList
+	@param_SendingList int,
+	@param_Tag varchar(50),
+	@param_user_name nvarchar(MAX),
+	@param_grid_column varchar(50),
+	@param_grid_dir varchar(50)
+AS
+BEGIN
+	DECLARE @filter_user nvarchar(MAX)
+	
+	SET @filter_user = ''
+	if(ISNULL(@param_user_name, '') != '')
+	BEGIN
+		SET @filter_user = ' AND (u.firstName LIKE %' + @param_user_name +'% OR u.middleName LIKE %' + @param_user_name +'% OR u.lastName LIKE %' + @param_user_name +'% OR u.email LIKE %' + @param_user_name +'%) ';
+	END	
+					
+	SELECT  
+		u.idUser, u.firstName, u.middleName, u.lastName, u.email, ue.EntryDate, 
+		(SELECT SUM(CAST(s.Unsubscribe AS INT))FROM BR_AutoResponder_Sending s  
+			INNER JOIN BR_AutoResponder_Template t ON s.TemplateId = t.Id  
+			WHERE t.SendingListId = @param_SendingList AND s.UserId = u.idUser) AS UNSUBSCRIBE,  
+		(SELECT SUM(CAST(s.OpenMail AS INT)) FROM BR_AutoResponder_Sending s  
+			INNER JOIN BR_AutoResponder_Template t ON s.TemplateId = t.Id  
+			WHERE t.SendingListId = @param_SendingList AND s.UserId = u.idUser) AS OPENMAIL,  
+		(SELECT SUM(CAST(s.Bounce AS INT)) FROM BR_AutoResponder_Sending s  
+			INNER JOIN BR_AutoResponder_Template t ON s.TemplateId = t.Id  
+			WHERE t.SendingListId = @param_SendingList AND s.UserId = u.idUser) AS BOUNCE,  
+		(SELECT SUM(CAST(s.Click AS INT)) FROM BR_AutoResponder_Sending s  
+			INNER JOIN BR_AutoResponder_Template t ON s.TemplateId = t.Id  
+			WHERE t.SendingListId = @param_SendingList AND s.UserId = u.idUser) AS CLICK  
+	FROM BR_AutoResponder_Sending s  
+	RIGHT OUTER JOIN BR_Users u ON s.UserId = u.idUser  
+	INNER JOIN BR_AutoResponder_UserEntry ue ON ue.UserId = u.idUser  
+	WHERE u.tags LIKE @param_Tag  AND ue.SendingListId = @param_SendingList + @filter_user
+	GROUP BY u.idUser, u.firstName, u.middleName, u.lastName, u.email, ue.EntryDate
+	ORDER BY + ' ' + @param_grid_column + ' ' + @param_grid_dir
+END
+GO

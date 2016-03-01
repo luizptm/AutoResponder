@@ -1,0 +1,7 @@
+﻿@using AutoResponder.Resources;
+@{
+    Layout = "~/Views/Shared/_Layout_bootstrap.cshtml";
+}
+
+<h2>@Resources.Error</h2>
+@Html.Raw(System.Web.HttpUtility.HtmlDecode(ViewBag.Error))

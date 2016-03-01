@@ -1,0 +1,102 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_SendingVM
+@using AutoResponder.Resources;
+@using System
+@using System.Web
+@using System.Web.Optimization
+@{
+    ViewBag.Title = Resources.Create + Resources.Sendings;
+}
+
+<h2>@Resources.Create @Resources.Sendings</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    Html.RenderPartial("_ValidationSummary");
+    <fieldset>
+        <legend>@Resources.Form</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserId", (SelectList)ViewBag.UserId, "- selecione -")
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TemplateId", (SelectList)ViewBag.TemplateId, "- selecione -")
+            @Html.ValidationMessageFor(model => model.TemplateId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SentDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("SentDate", "")
+            @Html.ValidationMessageFor(model => model.SentDate)
+            <script>
+                $("#SentDate").mask("99/99/9999 99:99:99");
+                //$("#SentDate").datetimeEntry({ datetimeFormat: 'D/O/Y H:M:S', spinnerImage: '' });
+            </script>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Unsubscribe)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Unsubscribe, (List<SelectListItem>)ViewBag.Range)
+            @Html.ValidationMessageFor(model => model.Unsubscribe)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpenMail)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.OpenMail, (List<SelectListItem>)ViewBag.Range)
+            @Html.ValidationMessageFor(model => model.OpenMail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bounce)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Bounce, (List<SelectListItem>)ViewBag.Range)
+            @Html.ValidationMessageFor(model => model.Bounce)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Click)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Click, (List<SelectListItem>)ViewBag.Range)
+            @Html.ValidationMessageFor(model => model.Click)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CREATION_DATE)
+        </div>
+        <div class="editor-field">
+            @*Html.TextBoxFor(model => model.CREATION_DATE)*@ @DateTime.Now.ToString("dd/MM/yyyy")
+            @Html.ValidationMessageFor(model => model.CREATION_DATE)
+        </div>
+
+        <p>
+            <br />
+            <input type="submit" value="@Resources.Save" class="btn btn-primary" />
+            &nbsp;@Html.ActionLink("Voltar para a lista", "Index", null, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @*Scripts.Render("~/bundles/jquery_admin")*@
+}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#UserId").chosen();
+        $("#TemplateId").chosen();
+    });
+</script>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ACEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ACEntitiesStoreContainer">
+          <EntitySet Name="BR_AccessControl_Action" EntityType="ACEntities.Store.BR_AccessControl_Action" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BR_AccessControl_ActionRole" EntityType="ACEntities.Store.BR_AccessControl_ActionRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BR_AccessControl_Application" EntityType="ACEntities.Store.BR_AccessControl_Application" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BR_AccessControl_Role" EntityType="ACEntities.Store.BR_AccessControl_Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BR_AccessControl_User" EntityType="ACEntities.Store.BR_AccessControl_User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BR_AccessControl_ActionRole_BR_AccessControl_Action" Association="ACEntities.Store.FK_BR_AccessControl_ActionRole_BR_AccessControl_Action">
+            <End Role="BR_AccessControl_Action" EntitySet="BR_AccessControl_Action" />
+            <End Role="BR_AccessControl_ActionRole" EntitySet="BR_AccessControl_ActionRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BR_AccessControl_ActionRole_BR_AccessControl_Role" Association="ACEntities.Store.FK_BR_AccessControl_ActionRole_BR_AccessControl_Role">
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+            <End Role="BR_AccessControl_ActionRole" EntitySet="BR_AccessControl_ActionRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BR_AccessControl_Role_BR_AccessControl_Application" Association="ACEntities.Store.FK_BR_AccessControl_Role_BR_AccessControl_Application">
+            <End Role="BR_AccessControl_Application" EntitySet="BR_AccessControl_Application" />
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BR_AccessControl_User_BR_AccessControl_Role" Association="ACEntities.Store.FK_BR_AccessControl_User_BR_AccessControl_Role">
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+            <End Role="BR_AccessControl_User" EntitySet="BR_AccessControl_User" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BR_AccessControl_Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="URL" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_ActionRole">
+          <Key>
+            <PropertyRef Name="ActionId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ActionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApplicationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Trigram" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BR_AccessControl_ActionRole_BR_AccessControl_Action">
+          <End Role="BR_AccessControl_Action" Type="ACEntities.Store.BR_AccessControl_Action" Multiplicity="1" />
+          <End Role="BR_AccessControl_ActionRole" Type="ACEntities.Store.BR_AccessControl_ActionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Action">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_ActionRole">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BR_AccessControl_ActionRole_BR_AccessControl_Role">
+          <End Role="BR_AccessControl_Role" Type="ACEntities.Store.BR_AccessControl_Role" Multiplicity="1" />
+          <End Role="BR_AccessControl_ActionRole" Type="ACEntities.Store.BR_AccessControl_ActionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_ActionRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BR_AccessControl_Role_BR_AccessControl_Application">
+          <End Role="BR_AccessControl_Application" Type="ACEntities.Store.BR_AccessControl_Application" Multiplicity="1" />
+          <End Role="BR_AccessControl_Role" Type="ACEntities.Store.BR_AccessControl_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_Role">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BR_AccessControl_User_BR_AccessControl_Role">
+          <End Role="BR_AccessControl_Role" Type="ACEntities.Store.BR_AccessControl_Role" Multiplicity="1" />
+          <End Role="BR_AccessControl_User" Type="ACEntities.Store.BR_AccessControl_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ACEntities" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AC_Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BR_AccessControl_Action" EntityType="ACEntities.BR_AccessControl_Action" />
+          <EntitySet Name="BR_AccessControl_Application" EntityType="ACEntities.BR_AccessControl_Application" />
+          <EntitySet Name="BR_AccessControl_Role" EntityType="ACEntities.BR_AccessControl_Role" />
+          <AssociationSet Name="FK_BR_AccessControl_Role_BR_AccessControl_Application" Association="ACEntities.FK_BR_AccessControl_Role_BR_AccessControl_Application">
+            <End Role="BR_AccessControl_Application" EntitySet="BR_AccessControl_Application" />
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+          </AssociationSet>
+          <AssociationSet Name="BR_AccessControl_ActionRole" Association="ACEntities.BR_AccessControl_ActionRole">
+            <End Role="BR_AccessControl_Action" EntitySet="BR_AccessControl_Action" />
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+          </AssociationSet>
+          <EntitySet Name="BR_AccessControl_User" EntityType="ACEntities.BR_AccessControl_User" />
+          <AssociationSet Name="FK_BR_AccessControl_User_BR_AccessControl_Role" Association="ACEntities.FK_BR_AccessControl_User_BR_AccessControl_Role">
+            <End Role="BR_AccessControl_Role" EntitySet="BR_AccessControl_Role" />
+            <End Role="BR_AccessControl_User" EntitySet="BR_AccessControl_User" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="BR_AccessControl_Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BR_AccessControl_Role" Relationship="ACEntities.BR_AccessControl_ActionRole" FromRole="BR_AccessControl_Action" ToRole="BR_AccessControl_Role" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BR_AccessControl_Role" Relationship="ACEntities.FK_BR_AccessControl_Role_BR_AccessControl_Application" FromRole="BR_AccessControl_Application" ToRole="BR_AccessControl_Role" />
+        </EntityType>
+        <EntityType Name="BR_AccessControl_Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BR_AccessControl_Application" Relationship="ACEntities.FK_BR_AccessControl_Role_BR_AccessControl_Application" FromRole="BR_AccessControl_Role" ToRole="BR_AccessControl_Application" />
+          <NavigationProperty Name="BR_AccessControl_Action" Relationship="ACEntities.BR_AccessControl_ActionRole" FromRole="BR_AccessControl_Role" ToRole="BR_AccessControl_Action" />
+          <NavigationProperty Name="BR_AccessControl_User" Relationship="ACEntities.FK_BR_AccessControl_User_BR_AccessControl_Role" FromRole="BR_AccessControl_Role" ToRole="BR_AccessControl_User" />
+          </EntityType>
+        <Association Name="FK_BR_AccessControl_Role_BR_AccessControl_Application">
+          <End Role="BR_AccessControl_Application" Type="ACEntities.BR_AccessControl_Application" Multiplicity="1" />
+          <End Role="BR_AccessControl_Role" Type="ACEntities.BR_AccessControl_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_Role">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BR_AccessControl_ActionRole">
+          <End Role="BR_AccessControl_Action" Type="ACEntities.BR_AccessControl_Action" Multiplicity="*" />
+          <End Role="BR_AccessControl_Role" Type="ACEntities.BR_AccessControl_Role" Multiplicity="*" />
+        </Association>
+        <EntityType Name="BR_AccessControl_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Trigram" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="DateTime" Name="CREATION_DATE" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BR_AccessControl_Role" Relationship="ACEntities.FK_BR_AccessControl_User_BR_AccessControl_Role" FromRole="BR_AccessControl_User" ToRole="BR_AccessControl_Role" />
+        </EntityType>
+        <Association Name="FK_BR_AccessControl_User_BR_AccessControl_Role">
+          <End Type="ACEntities.BR_AccessControl_Role" Role="BR_AccessControl_Role" Multiplicity="1" />
+          <End Type="ACEntities.BR_AccessControl_User" Role="BR_AccessControl_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BR_AccessControl_Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BR_AccessControl_User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ACEntitiesStoreContainer" CdmEntityContainer="AC_Entities">
+          <EntitySetMapping Name="BR_AccessControl_Action">
+            <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Action">
+              <MappingFragment StoreEntitySet="BR_AccessControl_Action">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BR_AccessControl_Application">
+            <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Application">
+              <MappingFragment StoreEntitySet="BR_AccessControl_Application">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BR_AccessControl_Role">
+            <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Role">
+              <MappingFragment StoreEntitySet="BR_AccessControl_Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BR_AccessControl_ActionRole" TypeName="ACEntities.BR_AccessControl_ActionRole" StoreEntitySet="BR_AccessControl_ActionRole">
+            <EndProperty Name="BR_AccessControl_Action">
+              <ScalarProperty Name="Id" ColumnName="ActionId" />
+            </EndProperty>
+            <EndProperty Name="BR_AccessControl_Role">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="BR_AccessControl_User">
+            <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_User">
+              <MappingFragment StoreEntitySet="BR_AccessControl_User">
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Trigram" ColumnName="Trigram" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

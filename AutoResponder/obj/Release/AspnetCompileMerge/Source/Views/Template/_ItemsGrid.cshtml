@@ -1,0 +1,24 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_TemplateVM>
+@using System.Web.Mvc;
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewDataDictionary<BR_AutoResponder_TemplateVM> dic = new ViewDataDictionary<BR_AutoResponder_TemplateVM>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+        columns.Add(m => m.Id).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, int>(x => x.Id, dic).DisplayName);
+        columns.Add(m => m.Subject).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, string>(x => x.Subject, dic).DisplayName);
+        columns.Add(m => m.BR_AutoResponder_SendingList.Name).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, int>(x => x.SendingListId, dic).DisplayName);
+        columns.Add(m => m.Sequence).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, int>(x => x.Sequence, dic).DisplayName);
+        columns.Add(m => m.Interval).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, Nullable<int>>(x => x.Interval, dic).DisplayName)
+            .RenderValueAs(o => o.Interval == null ? "-" : o.Interval.ToString());
+        columns.Add(m => m.Sender).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_TemplateVM, string>(x => x.Sender, dic).DisplayName);
+        //columns.Add().Titled("Detalhes").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Detalhes", "Details", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Editar", "Edit", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        //columns.Add().Titled("Excluir").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Excluir", "Delete", new { Id = o.Id }, new {@class="btn btn-warning"}));
+    }).Sortable(true);
+}

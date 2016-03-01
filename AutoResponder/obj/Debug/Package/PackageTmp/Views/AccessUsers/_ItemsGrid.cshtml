@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AutoResponder.Models.Entity.BR_AccessControl_User>
+@using System.Web.Mvc;
+@using AutoResponder.Models.Entity;
+@using AutoResponder.ViewModels;
+@using AutoResponder.Resources;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+	ViewDataDictionary<BR_AccessControl_User> dic = new ViewDataDictionary<BR_AccessControl_User>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+		columns.Add(m => m.Id).Titled(ModelMetadata.FromLambdaExpression<BR_AccessControl_User, int>(x => x.Id, dic).DisplayName);
+		columns.Add(m => m.Name).Titled(ModelMetadata.FromLambdaExpression<BR_AccessControl_User, string>(x => x.Name, dic).DisplayName);
+		columns.Add(m => m.RoleId).Titled(ModelMetadata.FromLambdaExpression<BR_AccessControl_User, int>(x => x.RoleId, dic).DisplayName);
+		columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink(Resources.Edit, "Edit", new { Id = o.Id }, new { @class = "btn btn-default" }));
+    }).Sortable(true);
+}

@@ -1,0 +1,2223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>\\bra-vm-weblab01\AutoResponder</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/30/2014 10:40:46</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>05/30/2014 10:40:46</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>05/30/2014 10:40:47</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.dll">
+      <publishTime>05/30/2014 10:40:47</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.dll">
+      <publishTime>11/13/2014 10:48:35</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Library.dll">
+      <publishTime>11/13/2014 10:48:33</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Library.pdb">
+      <publishTime>11/13/2014 10:48:33</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Models.dll">
+      <publishTime>11/13/2014 10:36:04</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Models.pdb">
+      <publishTime>11/13/2014 10:36:04</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.pdb">
+      <publishTime>11/13/2014 10:48:35</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Resources.dll">
+      <publishTime>11/13/2014 10:48:30</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.Resources.pdb">
+      <publishTime>11/13/2014 10:48:30</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.ViewModels.dll">
+      <publishTime>11/13/2014 10:48:32</publishTime>
+    </File>
+    <File Include="bin/AutoResponder.ViewModels.pdb">
+      <publishTime>11/13/2014 10:48:32</publishTime>
+    </File>
+    <File Include="bin/ClassLibraryResources.dll">
+      <publishTime>10/27/2014 11:55:13</publishTime>
+    </File>
+    <File Include="bin/ClassLibraryResources.pdb">
+      <publishTime>10/27/2014 11:55:13</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/en/AutoResponder.Resources.resources.dll">
+      <publishTime>11/13/2014 10:48:30</publishTime>
+    </File>
+    <File Include="bin/en/ClassLibraryResources.resources.dll">
+      <publishTime>10/27/2014 11:55:13</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/15/2014 11:45:55</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>08/15/2014 11:45:55</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServerCompact.dll">
+      <publishTime>08/15/2014 11:45:27</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/Grid.Mvc.Ajax.dll">
+      <publishTime>09/09/2014 10:19:07</publishTime>
+    </File>
+    <File Include="bin/GridMvc.dll">
+      <publishTime>09/09/2014 10:19:07</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/Mandrill.dll">
+      <publishTime>10/15/2014 11:14:01</publishTime>
+    </File>
+    <File Include="bin/Mandrill.pdb">
+      <publishTime>10/15/2014 11:14:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Exchange.WebServices.Auth.dll">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Exchange.WebServices.dll">
+      <publishTime>03/31/2014 11:02:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/30/2014 10:41:05</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/15/2014 11:16:33</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>07/08/2014 13:21:44</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>05/30/2014 10:41:08</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>05/30/2014 10:41:08</publishTime>
+    </File>
+    <File Include="bin/pt/AutoResponder.Resources.resources.dll">
+      <publishTime>11/13/2014 10:48:30</publishTime>
+    </File>
+    <File Include="bin/pt/ClassLibraryResources.resources.dll">
+      <publishTime>10/27/2014 11:55:14</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>07/07/2014 14:43:14</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/System.Linq.Dynamic.dll">
+      <publishTime>07/18/2014 11:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/15/2014 09:09:25</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/08/2014 17:22:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/15/2014 09:09:25</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.OData.dll">
+      <publishTime>07/15/2014 09:09:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/08/2014 17:22:57</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/30/2014 10:40:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/08/2014 17:22:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>09/08/2014 17:22:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>09/08/2014 17:22:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>09/08/2014 17:22:55</publishTime>
+    </File>
+    <File Include="bin/WebActivator.dll">
+      <publishTime>05/30/2014 10:41:10</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>05/30/2014 10:41:10</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/30/2014 10:41:10</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/15/2014 09:09:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>07/15/2014 09:09:26</publishTime>
+    </File>
+    <File Include="Content/bootstrap-dialog.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/bootstrap-dialog.min.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-mvc-validation.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.min.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.min.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Content/chosen-sprite%402x.png">
+      <publishTime>10/15/2014 11:14:19</publishTime>
+    </File>
+    <File Include="Content/chosen-sprite.png">
+      <publishTime>10/15/2014 11:14:19</publishTime>
+    </File>
+    <File Include="Content/chosen.css">
+      <publishTime>10/15/2014 11:14:24</publishTime>
+    </File>
+    <File Include="Content/chosen/chosen-sprite%402x.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/chosen/chosen-sprite.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/font-awesome.css">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="Content/Gridmvc.css">
+      <publishTime>09/09/2014 10:20:16</publishTime>
+    </File>
+    <File Include="Content/gridmvc.datepicker.css">
+      <publishTime>09/09/2014 10:19:11</publishTime>
+    </File>
+    <File Include="Content/gridmvc.datepicker.min.css">
+      <publishTime>09/09/2014 10:19:11</publishTime>
+    </File>
+    <File Include="Content/ie10mobile.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/animated-overlay.gif">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_diagonals-thick_20_666666_40x40.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_flat_10_000000_40x100.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_100_f6f6f6_1x400.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_100_fdf5ce_1x400.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_222222_256x240.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_228ef1_256x240.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ef8c08_256x240.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ffd27a_256x240.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ffffff_256x240.png">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/jquery-ui-1.10.3.custom.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery-ui-1.10.3.custom.min.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/jquery.datetimeentry.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerBlue.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerBlueBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerDefault.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerDefaultBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerGem.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerGemBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerGreen.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerGreenBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerOrange.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerOrangeBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerSquare.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerSquareBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerText.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerTextBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerUpDown.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.datetimeentry/spinnerUpDownBig.png">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/jquery.rating.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/jquery.tagit.css">
+      <publishTime>07/04/2014 07:36:38</publishTime>
+    </File>
+    <File Include="Content/ladda-bootstrap/ladda-themeless.min.css">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="Content/PagedList.css">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/30/2014 10:37:31</publishTime>
+    </File>
+    <File Include="Content/SpamCheck.css">
+      <publishTime>09/12/2014 08:44:14</publishTime>
+    </File>
+    <File Include="Content/tagit.ui-zendesk.css">
+      <publishTime>07/04/2014 07:36:38</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/animated-overlay.gif">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>09/08/2014 17:09:17</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>09/08/2014 17:09:16</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>09/08/2014 17:09:16</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>09/08/2014 17:09:16</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.menu.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.spinner.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tooltip.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/animated-overlay.gif">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.menu.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.spinner.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tooltip.min.css">
+      <publishTime>09/09/2014 10:12:24</publishTime>
+    </File>
+    <File Include="Exchange/GettingStarted.doc">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Exchange/License Terms.rtf">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Exchange/Microsoft.Exchange.WebServices.Auth.dll">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Exchange/Microsoft.Exchange.WebServices.dll">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Exchange/README.htm">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Exchange/Redist.txt">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>09/08/2014 09:43:27</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/11/2014 10:11:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/11/2014 10:11:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/11/2014 10:11:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/11/2014 10:11:43</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Grid.Mvc.Ajax.readme">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="INSTALL/CREATE_TABLES_AccessControl.txt">
+      <publishTime>07/17/2014 10:38:32</publishTime>
+    </File>
+    <File Include="INSTALL/Tables.sql">
+      <publishTime>07/07/2014 17:27:34</publishTime>
+    </File>
+    <File Include="logs/logfileSendings.txt">
+      <publishTime>11/13/2014 10:31:29</publishTime>
+    </File>
+    <File Include="Models/Entity/AccessModel.edmx.diagram">
+      <publishTime>10/16/2014 11:25:06</publishTime>
+    </File>
+    <File Include="Models/Entity/Model.edmx.diagram">
+      <publishTime>10/16/2014 11:25:06</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/15/2014 11:16:34</publishTime>
+    </File>
+    <File Include="Resources/Templates/Optin.html">
+      <publishTime>05/30/2014 10:37:24</publishTime>
+    </File>
+    <File Include="Scripts/additional-methods.js">
+      <publishTime>07/01/2014 21:33:14</publishTime>
+    </File>
+    <File Include="Scripts/additional-methods.min.js">
+      <publishTime>07/01/2014 21:33:14</publishTime>
+    </File>
+    <File Include="Scripts/app.Admin.js">
+      <publishTime>07/15/2014 09:23:47</publishTime>
+    </File>
+    <File Include="Scripts/app.MainSite.js">
+      <publishTime>10/20/2014 16:04:43</publishTime>
+    </File>
+    <File Include="Scripts/app.MainSite.POST.js">
+      <publishTime>09/12/2014 11:33:22</publishTime>
+    </File>
+    <File Include="Scripts/bootbox.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/bootbox.min.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-ckeditor-modal-fix.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker_pt-BR.js">
+      <publishTime>07/11/2014 11:51:07</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-dialog.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-dialog.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.min.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/11/2014 10:11:49</publishTime>
+    </File>
+    <File Include="Scripts/chosen.jquery.js">
+      <publishTime>10/15/2014 11:14:50</publishTime>
+    </File>
+    <File Include="Scripts/chosen.jquery.min.js">
+      <publishTime>10/15/2014 11:14:50</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/adapters/jquery.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/CHANGES.html">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor.asp">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor.pack">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor.php">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor_basic.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor_basic_source.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor_php4.php">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor_php5.php">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/ckeditor_source.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/config.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/contents.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/images/spacer.gif">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/INSTALL.html">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/lang/_languages.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/LICENSE.html">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/a11yhelp/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/a11yhelp/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/about/dialogs/about.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/about/dialogs/logo_ckeditor.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/adobeair/plugin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/ajax/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/autogrow/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/bbcode/plugin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/clipboard/dialogs/paste.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/colordialog/dialogs/colordialog.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/devtools/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/devtools/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/devtools/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/dialog/dialogDefinition.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/div/dialogs/div.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/docprops/dialogs/docprops.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/docprops/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/find/dialogs/find.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/flash/dialogs/flash.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/flash/images/placeholder.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/button.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/checkbox.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/form.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/hiddenfield.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/radio.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/select.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/textarea.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/dialogs/textfield.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/forms/images/hiddenfield.gif">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/iframe/dialogs/iframe.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/iframe/images/placeholder.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/iframedialog/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/image/dialogs/image.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/link/dialogs/anchor.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/link/dialogs/link.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/link/images/anchor.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/liststyle/dialogs/liststyle.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/pagebreak/images/pagebreak.gif">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/pastefromword/filter/default.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/pastetext/dialogs/pastetext.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/placeholder/dialogs/placeholder.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/placeholder/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/placeholder/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/placeholder/placeholder.gif">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/placeholder/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/preview/preview.html">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/scayt/dialogs/options.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/scayt/dialogs/toolbar.css">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_address.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_blockquote.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_div.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h1.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h2.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h3.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h4.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h5.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_h6.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_p.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/showblocks/images/block_pre.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/dialogs/smiley.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/angel_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/angry_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/broken_heart.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/confused_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/cry_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/devil_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/embaressed_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/envelope.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/heart.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/kiss.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/lightbulb.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/omg_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/regular_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/sad_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/shades_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/teeth_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/thumbs_down.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/thumbs_up.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/tounge_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/smiley/images/wink_smile.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/specialchar/dialogs/specialchar.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/specialchar/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/specialchar/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/styles/styles/default.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/stylesheetparser/plugin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/table/dialogs/table.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/tableresize/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/tabletools/dialogs/tableCell.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/templates/dialogs/templates.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/templates/templates/default.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/templates/templates/images/template1.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/templates/templates/images/template2.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/templates/templates/images/template3.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/dialogs/uicolor.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/plugin.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/uicolor.gif">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/assets/hue_bg.png">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/assets/hue_thumb.png">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/assets/picker_mask.png">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/assets/picker_thumb.png">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/assets/yui.css">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/uicolor/yui/yui.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/wsc/dialogs/ciframe.html">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/wsc/dialogs/tmpFrameset.html">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/wsc/dialogs/wsc.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/wsc/dialogs/wsc.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/plugins/xml/plugin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/dialog.css">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/editor.css">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/icons.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/icons_rtl.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/dialog_sides.gif">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/dialog_sides.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/dialog_sides_rtl.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/mini.gif">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/noimage.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/sprites.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/sprites_ie6.png">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/images/toolbar_start.gif">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/skin.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/kama/templates.css">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/dialog.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/editor.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/icons.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/icons_rtl.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/dialog_sides.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/dialog_sides.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/dialog_sides_rtl.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/mini.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/noimage.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/sprites.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/images/sprites_ie6.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/skin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/office2003/templates.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/dialog.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/editor.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/icons.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/icons_rtl.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/dialog_sides.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/dialog_sides.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/dialog_sides_rtl.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/mini.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/noimage.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/sprites.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/sprites_ie6.png">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/images/toolbar_start.gif">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/skin.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/skins/v2/templates.css">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor/themes/default/theme.js">
+      <publishTime>05/30/2014 10:37:26</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/adapters/jquery.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/build-config.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/CHANGES.md">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/ckeditor.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/config.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/contents.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/LICENSE.md">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/a11yhelp/dialogs/a11yhelp.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/a11yhelp/dialogs/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/a11yhelp/dialogs/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/about/dialogs/about.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/about/dialogs/hidpi/logo_ckeditor.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/about/dialogs/logo_ckeditor.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/clipboard/dialogs/paste.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/colordialog/dialogs/colordialog.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/dialog/dialogDefinition.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/div/dialogs/div.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/fakeobjects/images/spacer.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/find/dialogs/find.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/flash/dialogs/flash.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/flash/images/placeholder.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/button.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/checkbox.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/form.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/hiddenfield.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/radio.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/select.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/textarea.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/dialogs/textfield.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/forms/images/hiddenfield.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/icons.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/icons_hidpi.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/iframe/dialogs/iframe.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/iframe/images/placeholder.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/image/dialogs/image.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/image/images/noimage.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/link/dialogs/anchor.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/link/dialogs/link.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/link/images/anchor.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/link/images/hidpi/anchor.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/liststyle/dialogs/liststyle.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/magicline/images/hidpi/icon.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/magicline/images/icon.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/pagebreak/images/pagebreak.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/pastefromword/filter/default.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/preview/preview.html">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/scayt/dialogs/options.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/scayt/dialogs/toolbar.css">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/scayt/LICENSE.md">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/scayt/README.md">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_address.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_blockquote.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_div.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h1.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h2.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h3.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h4.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h5.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_h6.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_p.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/showblocks/images/block_pre.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/dialogs/smiley.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/angel_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/angel_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/angry_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/angry_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/broken_heart.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/broken_heart.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/confused_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/confused_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/cry_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/cry_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/devil_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/devil_smile.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/embaressed_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/embarrassed_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/embarrassed_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/envelope.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/envelope.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/heart.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/heart.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/kiss.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/kiss.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/lightbulb.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/lightbulb.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/omg_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/omg_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/regular_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/regular_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/sad_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/sad_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/shades_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/shades_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/teeth_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/teeth_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/thumbs_down.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/thumbs_down.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/thumbs_up.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/thumbs_up.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/tongue_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/tongue_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/tounge_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/whatchutalkingabout_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/whatchutalkingabout_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/wink_smile.gif">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/smiley/images/wink_smile.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/icons/hidpi/source-rtl.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/icons/hidpi/source.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/icons/source-rtl.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/icons/source.png">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/sourcearea/plugin.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/specialchar/dialogs/lang/pt-br.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/specialchar/dialogs/lang/_translationstatus.txt">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/specialchar/dialogs/specialchar.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/table/dialogs/table.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/tabletools/dialogs/tableCell.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/dialogs/templates.css">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/dialogs/templates.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/templates/default.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/templates/images/template1.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/templates/images/template2.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/templates/templates/images/template3.gif">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/ciframe.html">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/tmp.html">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/tmpFrameset.html">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/wsc.css">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/wsc.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/dialogs/wsc_ie.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/LICENSE.md">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/plugins/wsc/README.md">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/README.md">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog_ie.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog_ie7.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog_ie8.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog_iequirks.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/dialog_opera.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor_gecko.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor_ie.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor_ie7.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor_ie8.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/editor_iequirks.css">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/icons.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/icons_hidpi.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/arrow.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/close.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/hidpi/close.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/hidpi/lock-open.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/hidpi/lock.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/hidpi/refresh.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/lock-open.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/lock.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/images/refresh.png">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/skins/moono/readme.md">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/ckeditor_4.3.2/styles.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/colorbox/i18n/jquery.colorbox-pt-br.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/colorbox/jquery.colorbox-min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/colorbox/jquery.colorbox.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/globalize/cultures/globalize.culture.en-US.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/globalize/cultures/globalize.culture.pt-BR.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/globalize/cultures/globalize.cultures.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/globalize/globalize.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc-ext.js">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.ajax.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.customwidgets.js">
+      <publishTime>09/09/2014 10:19:45</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.js">
+      <publishTime>09/09/2014 10:19:45</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.lang.pt-br.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.min.js">
+      <publishTime>09/09/2014 10:19:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.1.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.1.min.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>07/11/2014 10:56:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>07/11/2014 10:56:02</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.0.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.0.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.1.js">
+      <publishTime>06/16/2014 10:26:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.1.min.js">
+      <publishTime>06/16/2014 10:26:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.4.js">
+      <publishTime>09/09/2014 10:12:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.4.min.js">
+      <publishTime>09/09/2014 10:12:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.4.min.js.map">
+      <publishTime>07/11/2014 11:38:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.11.1.js">
+      <publishTime>09/08/2014 17:09:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.datepicker.pt-br.js">
+      <publishTime>07/11/2014 11:52:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min-1.11.1.js">
+      <publishTime>09/08/2014 17:09:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.datetimeentry-pt.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.datetimeentry.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.datetimeentry.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput-1.3.1.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput-1.3.1.min.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.plugin.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.plugin.min.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.rating.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.rating.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>09/10/2014 14:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>09/10/2014 14:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.globalize.js">
+      <publishTime>05/30/2014 10:37:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.globalize.min.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.globalize.min.js.map">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/01/2014 21:33:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>07/01/2014 21:33:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>09/10/2014 14:31:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>09/10/2014 14:31:53</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.debug.js">
+      <publishTime>05/30/2014 10:37:29</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.min.js">
+      <publishTime>05/30/2014 10:37:28</publishTime>
+    </File>
+    <File Include="Scripts/knockout.dataGridBasic.js">
+      <publishTime>05/30/2014 10:37:27</publishTime>
+    </File>
+    <File Include="Scripts/knockout.simpleGrid.3.0.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/ladda-bootstrap/ladda.min.js">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="Scripts/ladda-bootstrap/spin.min.js">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.7.2.js">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>10/15/2014 11:15:19</publishTime>
+    </File>
+    <File Include="Scripts/SpamCheck.js">
+      <publishTime>09/10/2014 10:15:45</publishTime>
+    </File>
+    <File Include="Scripts/SpamCheck/cufon-yui.js">
+      <publishTime>09/12/2014 08:39:04</publishTime>
+    </File>
+    <File Include="Scripts/SpamCheck/rockwell.font.js">
+      <publishTime>09/12/2014 08:44:40</publishTime>
+    </File>
+    <File Include="Scripts/SpamCheck/SpamCheck.js">
+      <publishTime>10/15/2014 10:35:54</publishTime>
+    </File>
+    <File Include="Scripts/tag-it.js">
+      <publishTime>07/04/2014 07:36:38</publishTime>
+    </File>
+    <File Include="Scripts/tag-it.min.js">
+      <publishTime>07/04/2014 07:36:38</publishTime>
+    </File>
+    <File Include="Scripts/URI.js">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="StoredProcedures/BR_AutoResponder_Unsubscribe.txt">
+      <publishTime>06/06/2014 10:27:59</publishTime>
+    </File>
+    <File Include="StoredProcedures/BR_AutoResponder_Users.txt">
+      <publishTime>06/10/2014 11:03:04</publishTime>
+    </File>
+    <File Include="StoredProcedures/BR_AutoResponser_ListSendingsBySendingList.txt">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="StoredProcedures/BR_AutoResponser_ListTemplatesBySendingList.txt">
+      <publishTime>05/30/2014 10:37:30</publishTime>
+    </File>
+    <File Include="StoredProcedures/BR_AutoResponser_ListUsersBySendingList.txt">
+      <publishTime>06/10/2014 11:46:43</publishTime>
+    </File>
+    <File Include="Views/AccessUsers/Create.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/AccessUsers/Details.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/AccessUsers/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/AccessUsers/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/AccessUsers/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Admin/ChangePassword.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Admin/Manage.cshtml">
+      <publishTime>07/22/2014 10:57:58</publishTime>
+    </File>
+    <File Include="Views/Admin/Register.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Admin/_ChangePasswordPartial.cshtml">
+      <publishTime>07/22/2014 10:57:58</publishTime>
+    </File>
+    <File Include="Views/Admin/_SetPasswordPartial.cshtml">
+      <publishTime>07/22/2014 10:57:58</publishTime>
+    </File>
+    <File Include="Views/Confirm/Index.cshtml">
+      <publishTime>06/16/2014 11:22:41</publishTime>
+    </File>
+    <File Include="Views/Form/Error.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Form/Index.cshtml">
+      <publishTime>09/03/2014 16:46:49</publishTime>
+    </File>
+    <File Include="Views/Form/Success.cshtml">
+      <publishTime>08/01/2014 10:21:32</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/AccessDenied.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/AddUserInList.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/CreateSendingList.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/CreateSendingListPage.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/CreateTag.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/CreateTemplate.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/CreateTemplatePage.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/EditTemplate.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/EditTemplatePage.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/Envios.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/ExecuteSending.cshtml">
+      <publishTime>08/11/2014 17:07:05</publishTime>
+    </File>
+    <File Include="Views/MainSite/Index.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/ListDetails.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/Logs.cshtml">
+      <publishTime>05/30/2014 10:37:23</publishTime>
+    </File>
+    <File Include="Views/MainSite/PartialViewError.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/Stats.cshtml">
+      <publishTime>05/30/2014 10:37:23</publishTime>
+    </File>
+    <File Include="Views/MainSite/Templates.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/TestSendingTemplate.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/MainSite/UserDetails.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/Usuarios.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/VerTemplate.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/_AjaxPaging_Envios.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/_AjaxPaging_Templates.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/MainSite/_AjaxPaging_Usuarios.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Sending/Create.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Sending/Details.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Sending/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Sending/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Sending/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/SendingList/Create.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/SendingList/Details.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/SendingList/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/SendingList/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/SendingList/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Shared/_AjaxGridPager.cshtml">
+      <publishTime>09/09/2014 10:19:12</publishTime>
+    </File>
+    <File Include="Views/Shared/_Grid.cshtml">
+      <publishTime>09/09/2014 10:19:11</publishTime>
+    </File>
+    <File Include="Views/Shared/_GridPager.cshtml">
+      <publishTime>09/09/2014 10:19:11</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout_bootstrap.cshtml">
+      <publishTime>07/11/2014 11:15:37</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout_login.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Shared/_LogOnPartial.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/Shared/_Menu.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Shared/_ProgessAlert.cshtml">
+      <publishTime>10/24/2014 10:32:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_Top.cshtml">
+      <publishTime>11/13/2014 10:14:46</publishTime>
+    </File>
+    <File Include="Views/Shared/_ValidationSummary.cshtml">
+      <publishTime>10/27/2014 10:26:34</publishTime>
+    </File>
+    <File Include="Views/Shared/__Layout_Stats.cshtml">
+      <publishTime>05/30/2014 10:37:23</publishTime>
+    </File>
+    <File Include="Views/SpamCheck/Index.cshtml">
+      <publishTime>09/12/2014 10:34:07</publishTime>
+    </File>
+    <File Include="Views/Stats/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Tag/Create.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Tag/Details.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Tag/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Tag/Index.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Tag/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/Template/Create.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Template/Details.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Template/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Template/Index.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Template/VerTemplate.cshtml">
+      <publishTime>05/30/2014 10:37:23</publishTime>
+    </File>
+    <File Include="Views/Template/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:27</publishTime>
+    </File>
+    <File Include="Views/UserEntry/Create.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/UserEntry/Details.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/UserEntry/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/UserEntry/Index.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/UserEntry/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Users/Create.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Users/Details.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Users/Edit.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Users/Index.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Users/_ItemsGrid.cshtml">
+      <publishTime>10/28/2014 15:17:26</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/30/2014 10:37:22</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/30/2014 10:37:22</publishTime>
+    </File>
+    <File Include="Web-bra-internet.config">
+      <publishTime>09/11/2014 09:48:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/13/2014 10:48:37</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>05/30/2014 10:37:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

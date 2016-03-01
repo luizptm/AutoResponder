@@ -1,0 +1,82 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TemplateVM
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="title">Teste de Envio de Template</h4>
+</div>
+<script>
+    $("form").validate({
+        rules: {
+            Sender: {
+                required: true,
+                email: true
+            },
+            To: {
+                required: true,
+                email: true
+            },
+            Subject: {
+                required: true
+            },
+            Body: {
+                required: true
+            }
+        }
+    });
+</script>
+@using (Ajax.BeginForm("TestSendingTemplate", "MainSitePost", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "exibirMensagem(data, 'TestSendingTemplate')", OnFailure = "exibirErro" }, new { Id = "TestarEnvioTemplate", Role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.SendingListId)
+    @Html.HiddenFor(model => model.Sequence)
+    @Html.HiddenFor(model => model.Interval)
+    @Html.Hidden("Sender", AutoResponder.lib.Constants.DEFAULT_SENDER_EMAIL)
+
+    <div class="modal-body">
+        <span class="glyphicon glyphicon-asterisk small"></span> Campos obrigatórios
+        <br/><br/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sender)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.TextBox("Sender", AutoResponder.lib.Constants.DEFAULT_SENDER_EMAIL, new { disabled = "disabled" })
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.DropDownList("UserId", (List<SelectListItem>)ViewBag.UserId, "- selecione -", new { @class = "selectpicker" })
+            &nbsp;@Html.ValidationMessageFor(model => model.UserId)
+            <script>
+                $("#UserId").selectpicker();
+            </script>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subject)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.TextBox("Subject", (String)Model.Subject)
+            &nbsp;@Html.ValidationMessageFor(model => model.Subject)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Body)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @if (Model.Sequence == 0)
+            {
+                <text>
+                    <br/>Marcações: <br/>
+                    <i style="color: green;">&lt;!--!STR_NAME!--&gt;</i> - nome do usuário <br/>
+                    <i style="color: green;">&lt;!--!LINK_OPTIN!--&gt;</i> - link de optin
+                </text>
+            }
+            @Html.TextArea("Body", (String)Model.Body, 30, 90, null)
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    loadCKEditor('Body', false);
+                });
+            </script>
+            &nbsp;@Html.ValidationMessageFor(model => model.Body)
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Fechar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+}

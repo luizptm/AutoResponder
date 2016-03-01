@@ -1,0 +1,73 @@
+﻿@model AutoResponder.ViewModels.BR_UsersVM
+
+    @Html.HiddenFor(model => model.idUser, new { Id = "Id" })
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.firstName):</b><br/>
+        @if (String.IsNullOrEmpty(Model.firstName)) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.firstName);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.middleName):</b><br/>
+        @if (String.IsNullOrEmpty(Model.middleName)) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.middleName);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.lastName):</b><br/>
+        @if (String.IsNullOrEmpty(Model.lastName)) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.lastName);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.email):</b><br/>
+        @if (String.IsNullOrEmpty(Model.email)) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.email);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.tags):</b><br/>
+        @Html.EditorFor(model => model.tags)
+    </div>
+<p>
+    @Html.AntiForgeryToken()
+    @Html.ActionLink("Editar", "Edit", new { id=Model.idUser }, new { @class = "btn btn-default" })
+</p>
+<p>
+    <a class="btn btn-danger" onclick="javascript: return ExcluirRegistro();">Apagar</a>
+</p>
+@*using (Html.BeginForm("Delete", "Users", new { id=Model.idUser }, FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="javascript: return ExcluirRegistro();" />
+    </p>
+}*@
+
+<script type="text/javascript">
+    $(function () {
+        $("#tags").tagit({
+            readOnly: true,
+            singleFieldDelimiter: ' '
+        });
+    });
+</script>

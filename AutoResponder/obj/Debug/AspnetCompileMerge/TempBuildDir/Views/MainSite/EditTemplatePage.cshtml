@@ -1,0 +1,123 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TemplateVM
+@using System
+@using System.Web
+@using System.Web.Optimization
+<script>
+    $("form").validate({
+        rules: {
+            SendingListId: {
+                required: true
+            },
+            Sequence: {
+                required: true
+            },
+            Interval: {
+                required: true
+            },
+            Sender: {
+                required: true,
+                email: true
+            },
+            Subject: {
+                required: true
+            },
+            Body: {
+                required: true
+            }
+        }
+    });
+</script>
+<div id="divCreateTemplate" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        @if (Model.Sequence == 0)
+        {
+            <text>Editar Template de Optin</text>
+        }
+        else
+        {
+            <text>Editar Template</text>
+        }
+    </div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("", "", null, new AjaxOptions { HttpMethod = "POST" }, new { Id = "EditTemplateForm", Role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.Hidden("Sender", AutoResponder.lib.Constants.DEFAULT_SENDER_EMAIL)
+
+            <div>
+                <span class="glyphicon glyphicon-asterisk small"></span> Campos obrigatórios
+                <br/><br/>
+                @Html.HiddenFor(model => model.Id)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SendingListId)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.DropDownList("SendingListIdShow", (SelectList)ViewBag.SendingListId, "- selecione -", new { disabled = "disabled", @class = "selectpicker" })
+                    @Html.HiddenFor(model => model.SendingListId)
+                    &nbsp;@Html.ValidationMessageFor(model => model.SendingListId)
+                    <script>
+                        @if (Model != null)
+                        {
+                            <text>$("#SendingListIdShow").val(@Model.SendingListId);</text>
+                        }
+                        $("#SendingListIdShow").selectpicker();
+                    </script>
+                
+                    @Html.LabelFor(model => model.Sequence)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Sequence", Model.Sequence, new { type = "number", min = "1",  max = "999" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Sequence)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Interval)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @if (Model.Sequence == 0)
+                    {
+                        @Html.TextBox("Interval", Model.Interval, new { disabled = "disabled", type = "number", min = "0",  max = "999" })
+                    }
+                    else
+                    {
+                        @Html.TextBox("Interval", Model.Interval, new { type = "number", min = "0",  max = "999" })
+                    }
+                    @Html.ValidationMessageFor(model => model.Interval)
+                
+                    @Html.LabelFor(model => model.Sender)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Sender", AutoResponder.lib.Constants.DEFAULT_SENDER_EMAIL, new { disabled = "disabled", size = "50" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Sender)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Subject", Model.Subject, new { size = "120" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Subject)
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Body)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @if (Model.Sequence == 0)
+                    {
+                        <text>
+                            <br/>Marcações: <br/>
+                            <i style="color: green;">&lt;!--!STR_NAME!--&gt;</i> - nome do usuário <br/>
+                            <i style="color: green;">&lt;!--!LINK_OPTIN!--&gt;</i> - link de optin
+                        </text>
+                    }
+                    @Html.TextAreaFor(model => model.Body, 30, 90, new { id = "Body" })
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            loadCKEditor('Body', false);
+                        });
+                    </script>
+                    &nbsp;@Html.ValidationMessageFor(model => model.Body)
+                </div>
+                <div>
+                    @Html.HiddenFor(model => model.CREATION_DATE, new { id = "CREATION_DATE" })
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default load" onclick="javascript: Templates();">Voltar para a lista</button>
+                <button type="button" class="btn btn-primary load" onclick="javascript: EditTemplate();">Salvar</button>
+            </div>
+            if (HttpContext.Current.Request.IsLocal)
+            {
+                <text>&nbsp;<br /><a class="btn btn-default load" href="#" onclick="javascript: ShowEditTemplate();">refresh</a></text>
+            }
+        }
+    </div>
+</div>

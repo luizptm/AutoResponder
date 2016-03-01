@@ -1,0 +1,21 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Detalhes da Lista</h4>
+    </div>
+    <div class="panel-body" style="margin-bottom: 15px;">
+        Descrição: <span class="label label-default">@ViewBag.Details</span>
+        &nbsp;
+		@if (@ViewBag.Tag != null)
+		{
+			<text>
+			Tag: <span class="label label-default">@ViewBag.Tag</span>
+			&nbsp;
+			</text>
+		}
+		Tags: <span class="label label-default">@ViewBag.Tags</span>
+		&nbsp;
+        Data de Criação: <span class="label label-default">@ViewBag.CreationDate</span>
+        &nbsp;
+        <button id="showAddUserToList" class="btn btn-primary" onclick="javascript: ShowAddUserToList();">Adicionar Usuário</button>
+    </div>
+</div>

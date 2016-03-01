@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc595e8869a745c9813f582159bd9c79" Name="Diagram1">
+        <EntityTypeShape EntityType="ACEntities.BR_AccessControl_Action" Width="2.125" PointX="0.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACEntities.BR_AccessControl_Application" Width="2.625" PointX="3.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACEntities.BR_AccessControl_Role" Width="2" PointX="3.375" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="ACEntities.FK_BR_AccessControl_Role_BR_AccessControl_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="ACEntities.BR_AccessControl_ActionRole" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ACEntities.BR_AccessControl_User" Width="2.375" PointX="6.625" PointY="1" />
+        <AssociationConnector Association="ACEntities.FK_BR_AccessControl_User_BR_AccessControl_Role" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

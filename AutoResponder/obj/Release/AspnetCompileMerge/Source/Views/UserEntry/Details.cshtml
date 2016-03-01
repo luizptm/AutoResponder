@@ -1,0 +1,45 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_UserEntryVM
+
+    @Html.HiddenFor(model => model.Id)
+	<div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.UserId):</b><br/>
+        @Html.DisplayFor(model => model.BR_Users.firstName)
+    </div>
+
+	<div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.UserId) (ID):</b><br/>
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.SendingListId):</b><br/>
+        @Html.DisplayFor(model => model.BR_AutoResponder_SendingList.Name)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.EntryDate):</b><br/>
+        @Html.DisplayFor(model => model.EntryDate)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Optin):</b><br/>
+        @Html.DisplayFor(model => model.Optin)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.CREATION_DATE):</b><br/>
+        @Html.DisplayFor(model => model.CREATION_DATE)
+    </div>
+<p>
+    @Html.AntiForgeryToken()
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new { @class = "btn btn-default" })
+</p>
+<p>
+    <a class="btn btn-danger" onclick="javascript: return ExcluirRegistro();">Apagar</a>
+</p>
+@*using (Html.BeginForm("Delete", "UserEntry", new { id=Model.Id }, FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="javascript: return ExcluirRegistro();" />
+    </p>
+}*@

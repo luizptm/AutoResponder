@@ -1,0 +1,19 @@
+﻿@using System.Web
+@using System.Web.Optimization
+
+@{
+    var username = "Visitante";
+    if (Context.User != null && Context.User.Identity != null)
+    {
+	    username = Context.User.Identity.Name;
+        username = User.Identity.Name.Replace(@"BRASIL\", "");
+        if (username == "")
+        {
+            username = "Visitante";
+        }
+    }
+}
+@if (!String.IsNullOrEmpty(username))
+{
+    <text>Seja bem-vindo(a), <strong>@(username)</strong>!</text>
+}

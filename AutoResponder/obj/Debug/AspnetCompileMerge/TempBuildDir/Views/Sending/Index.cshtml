@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_SendingVM>
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewBag.Title = "Envios";
+    ViewDataDictionary<BR_AutoResponder_SendingVM> dic = new ViewDataDictionary<BR_AutoResponder_SendingVM>();
+}
+
+<div class="well" style="font-size:large;">
+    @Html.ActionLink("Envios", "Index") &nbsp;&nbsp;&nbsp; @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-primary" })
+</div>
+<div class="row">
+    <div class="col-md-3 col-md-push-9">
+        <h4>Detalhes</h4>
+        <div id="details-content">
+            <p class="muted">
+                Selecione um item
+            </p>
+        </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+        @{Html.RenderPartial("_ItemsGrid", Model);}
+    </div>
+</div>
+<script type="text/javascript" src="Scripts/app.Admin.js"></script>
+<script>
+    $("td[class='grid-cell']:contains('Sim')").html('<span class="glyphicon glyphicon-ok"></span>');
+    $("td[class='grid-cell']:contains('Não')").html('<span class="glyphicon glyphicon-minus"></span>');
+    $(function () {
+        pageGrids.dataGrid.onRowSelect(function (e) {
+            var controller = document.location.pathname;
+            $.post(controller + "/GetDetails?id=" + e.row.Id, function (data) {
+            })
+            .done(function (data) {
+                $("#details-content").html(data.Content);
+            })
+            .fail(function () {
+                exibirErro(data, "", undefined);
+            });
+        });
+    });
+</script>

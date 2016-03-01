@@ -1,0 +1,206 @@
+﻿In the prompt of command:
+C:\> net group /domain  (lists all Roles in the domain)
+
+*BRA-ADM
+*BRA-Advantage-Users
+*BRA-Agresso-Accounting-Users
+*BRA-Agresso-Logistics-Test-users
+*BRA-Agresso-Logistics-users
+*BRA-Agresso-report-users
+*BRA-AltitudePowerUsers
+*Bra-Altitude-Training-Users
+*BRA-Attoney-At-Law
+*BRA-Biztalk-Support
+*BRA-BT
+*BRA-CCP-LAUDOS
+*BRA-CDM-Users
+*BRA-CitrixPNagent-Computers
+*BRA-CMIS
+*BRA-COMMERCIAL
+*BRA-Confluence-Admins
+*BRA-Confluence-Users
+*BRA-Consumer Relations
+*BRA-Consumer Relations-Management
+*BRA-Develop
+*BRA-DL-GTF
+*BRA-DL-WebDev
+*BRA-Economics & Law Intranet
+*BRA-Editorial
+*BRA-Editorial Intranet
+*BRA-Eletronical Communications
+*BRA-EnterpriseArchitect-Users
+*BRA-EXT-Develop
+*BRA-Finances
+*BRA-Financial Analysis & Editing Intranet
+*BRA-FS-Infrastructure
+*BRA-FS-IT
+*BRA-FS-ViePrivee-RW
+*BRA-General Management
+*BRA-General Services
+*Bra-GL-ADMSendAs
+*BRA-GL-Adm-x
+*BRA-GL-Altitude-Users
+*BRA-GL-AutoEnrollUsers
+*BRA-GL-CCP
+*BRA-GL-CMIS
+*BRA-GL-CNB
+*Bra-GL-ColaboradoresSendAS
+*BRA-GL-CTI-Project
+*BRA-GL-D&D
+*BRA-GL-DESENV
+*BRA-GL-DesInt
+*BRA-GL-Dir
+*BRA-GL-ExchangeAdmins
+*BRA-GL-HrSendAs
+*BRA-GL-Info-x
+*BRA-GL-INFRA
+*Bra-GL-JuniperDBStats
+*BRA-GL-JuniperHRAccessApp
+*BRA-GL-JuniperPlannet
+*BRA-GL-JuniperProdfol
+*BRA-GL-LOG
+*BRA-GL-MailboxManagers
+*BRA-GL-Marche
+*BRa-GL-MarketingSenedrAs
+*BRA-GL-OPERATORS
+*BRA-GL-OrientaSendAs
+*BRA-GL-PlannetUsers
+*BRA-GL-PlanonUsers
+*BRA-GL-Pool-x
+*BRA-GL-Prod
+*BRA-GL-PROD_LOG
+*BRA-GL-PROJECTOFFICE
+*BRA-GL-Promo
+*Bra-Gl-PromoSendAs
+*Bra-Gl-protesteSendAs
+*Bra-GL-PT
+*BRA-GL-PublicFolderAdministrators
+*BRA-GL-RECUPERACAOSendAs
+*BRA-GL-Tech
+*BRA-GL-WEB
+*BRA-GL-Webcritical
+*BRA-Health&Food
+*BRA-Health&Food Intranet
+*BRA-Helpdesk
+*BRA-Human Resources
+*BRA-I&S
+*BRA-I&S Intranet
+*BRA-Individual Help
+*BRA-Infra-Dba-Srv-admins
+*BRA-Infrastructure
+*BRA-INTERNET
+*BRA-IT
+*BRA-JuniperAgressoApp
+*BRA-Juniper-developpers
+*BRA-Juniper-eval-tools-application
+*BRA-Juniper-Files
+*BRA-Juniper-Mail-Rio
+*BRA-Juniper-Mail-SP
+*BRA-Juniper-SVN-Access
+*BRA-Juniper-TargetProcess-application
+*BRA-Juniper-uagent
+*BRA-JuniperWebcontentManager
+*BRA-Legal Economic & Financial Information
+*BRA-Legal Economic & Financial Information Intranet
+*Bra-LO-CMIS Intranet
+*bra-lo-edition intranet
+*BRA-LO-Editorial Intranet
+*bra-lo-Electronic Communications Intranet
+*Bra-LO-Employee Intranet
+*Bra-LO-Externals Intranet
+*BRA-LO-General Services Intranet
+*BRA-LO-Health Intranet
+*Bra-LO-Human Resources Intranet
+*BRA-LO-Individual Help Externals  Intranet
+*BRA-LO-Individual Help Intranet
+*BRA-LO-INFRASTRUCTURE Intranet
+*Bra-LO-Intranet
+*Bra-LO-IT Intranet
+*bra-lo-lay-out intranet
+*BRA-LO-Legal Economical and Financial Information Intranet
+*BRA-LO-Lobby&Press Intranet
+*bra-Lo-Production & Logistics Intranet
+*BRA-LO-Production Intranet
+*BRA-LO-Project Office Intranet
+*BRA-LO-Testing and research Intranet
+*BRA-LSV-ReportReaders
+*BRA-Lync-computers
+*BRA-LyncOnly-users
+*BRA-Lync-PilotUsers
+*BRA-Lync-RJ-users
+*BRA-Lync-SP-Users
+*BRA-Lync-Telephony
+*BRA-Marketing
+*BRA-Oracle-Linux-Users
+*BRA-Orphea-Users
+*BRA-OutlookCachedMode-OFF
+*BRA-pdh-users
+*BRA-PF-Proteste-Editors
+*BRA-Production - Logistics
+*Bra-Products
+*BRA-Products Intranet
+*BRA-ProjectOffice
+*BRA-Prospection
+*BRA-PRP
+*BRA-PRP Intranet
+*BRA-PRT-DEV01
+*BRA-PRT-INFRA01
+*BRA-PRT-WEB01
+*BRA-QPRProcessGuide-Users
+*BRA-QPRScoreCard-Users
+*BRA-QPRUserMgmt-Users
+*BRA-RJ-Lobby & Press
+*Bra-Sac
+*Brasil
+*BRA-SP-Lobby & Press
+*BRA-SSD
+*BRA-SSD Intranet
+*BRA-Stathp-Users
+*BRA-Subscriptions
+*Bra-Uagent-Users
+*BRA-Unica-Users
+*BRA-Usupervisors-users
+*BRA-UV-E2K7-Admins
+*Bra-UV-InfoMiniStat-R
+*BRA-UV-PublicFolderManagers
+*BRA-UV-SMEXReport
+*BRA-XenApp-Dameware
+*BRA-XenApp-Firefox
+*BRA-XenApp-GadWinPrintscreen
+*BRA-XenApp-IZarc
+*BRA-XenApp-Keepass
+*BRA-XenApp-Movi
+*BRA-XenApp-MSProject
+*BRA-XenApp-OfficePRO
+*BRA-XenApp-OfficePROplus
+*BRA-XenApp-OfficeSTD
+*BRA-XenApp-Putty
+*BRA-XenApp-See&Share
+*BRA-XenApp-Spark
+*BRA-XenApp-Visio
+*BRA-XenApp-vSphere
+*BRA-XenApp-WinSCP
+*BRA-XenApp-XMLNotepad
+*BRA-XenOfflineUsers
+*Cert Publishers
+*DnsUpdateProxy
+*Domain Admins
+*Domain Computers
+*Domain Controllers
+*Domain Guests
+*Domain Users
+*Exchange Domain Servers
+*Group Policy Creator Owners
+*onlineprices-helpdesk
+*SMEX Admin Group
+*Track-It! Technicians
+
+========================================================================
+
+C:\> net user lpm /domain (lists info, including roles for a user)
+*BRA-EnterpriseArchite*BRa-GL-MarketingSened
+*BRA-GL-Info-x        *BRA-INTERNET
+*BRA-GL-Webcritical   *BRA-Eletronical Commu
+*BRA-GL-WEB           *bra-lo-Electronic Com
+*Domain Users         *BRA-Juniper-Files
+*BRA-DL-WebDev

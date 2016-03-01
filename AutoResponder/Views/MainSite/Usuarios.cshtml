@@ -1,0 +1,31 @@
+﻿@model PagedList.IPagedList<AutoResponder.ViewModels.UsuariosVM>
+@using AutoResponder.Resources;
+@using PagedList;
+@using PagedList.Mvc;
+
+<div class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        @Resources.Result <span class="badge">@Model.TotalItemCount</span>
+        &nbsp;<a class="btn btn-default load" href="#" onclick="javascript: Usuarios();">@Resources.Refresh</a>
+    </div>
+    @if (HttpContext.Current.Request.IsLocal)
+    {
+        <div class="panel-heading" style="font-size:large;">
+            <pre style="font-size:small;">@ViewBag.Sql_Usuarios</pre>
+        </div>
+    } 
+    <div class="panel-body">
+        <div class="grid-wrap">
+            <div class="input-append">
+                @Html.TextBox("user_name", ViewBag.CurrentFilter as string, new { placeholder = "Nome ou e-mail", size = "30" })&nbsp;&nbsp;
+                <button id="btnSearchNameOrEmail" class="btn" type="submit" onclick="javascript: return searchNameOrEmail('usuarios', $('#user_name').val());">
+                    <i class="glyphicon glyphicon-search"></i>&nbsp;@Resources.Search
+                </button>
+                <button id="btnShowAll" class="btn" type="submit" onclick="javascript: Usuarios();">
+                    <i class="glyphicon glyphicon-search"></i>&nbsp;@Resources.ShowAll
+                </button>
+            </div>
+            <div id="grid-list">@{Html.RenderPartial("_AjaxPaging_Usuarios", Model);}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_SendingVM
+@using AutoResponder.Resources;
+	@Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.UserId):</b><br/>
+        @Html.DisplayFor(model => model.BR_Users.firstName)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.SentDate):</b><br/>
+        @if (String.IsNullOrEmpty(Model.SentDate == null ? "" : Model.SentDate.ToString())) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.SentDate);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Unsubscribe):</b><br/>
+        @if (String.IsNullOrEmpty(Model.Unsubscribe == null ? "" : Model.Unsubscribe.ToString().Replace("False", ""))) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.Unsubscribe);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.OpenMail):</b><br/>
+        @if (String.IsNullOrEmpty(Model.OpenMail == null ? "" : Model.OpenMail.ToString().Replace("False", ""))) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.OpenMail);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Bounce):</b><br/>
+        @if (String.IsNullOrEmpty(Model.Bounce == null ? "" : Model.Bounce.ToString().Replace("False", ""))) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.Bounce);
+        }
+    </div>
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Click):</b><br/>
+        @if (String.IsNullOrEmpty(Model.Click == null ? "" : Model.Click.ToString().Replace("False", ""))) {
+            <span class='glyphicon glyphicon-minus'></span>
+        }
+            else
+        {
+            @Html.DisplayFor(model => model.Click);
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.CREATION_DATE):</b><br/>
+        @Html.DisplayFor(model => model.CREATION_DATE)
+    </div>
+<p>
+    @Html.AntiForgeryToken()
+    @Html.ActionLink(Resources.Edit, "Edit", new { id=Model.Id }, new { @class = "btn btn-default" })
+</p>
+<p>
+    <a class="btn btn-danger" onclick="javascript: return ExcluirRegistro();">@Resources.Delete</a>
+</p>
+@*using (Html.BeginForm("Delete", "Sending", new { id=Model.Id }, FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="javascript: return ExcluirRegistro();" />
+    </p>
+}*@

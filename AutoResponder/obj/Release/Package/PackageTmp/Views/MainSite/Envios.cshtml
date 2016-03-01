@@ -1,0 +1,30 @@
+﻿@model PagedList.IPagedList<AutoResponder.ViewModels.EnviosVM>
+@using AutoResponder.Resources;
+@using PagedList;
+@using PagedList.Mvc;
+
+<div id="Resultado" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        @Resources.Result <span class="badge">@Model.TotalItemCount</span>
+        &nbsp;<a class="btn btn-default load" href="#" onclick="javascript: Envios();">@Resources.Refresh</a>
+    </div>
+    @if (HttpContext.Current.Request.IsLocal)
+    {
+        <div class="panel-heading" style="font-size:large;">
+            <pre style="font-size:small;">@ViewBag.Sql_Envios</pre>
+        </div>
+    }  
+    <div class="panel-body">
+        <div class="well well-sm">
+            Envios com: &nbsp;&nbsp;
+            <input id="cbUnsubscribe" type="checkbox" value="1" @ViewBag.Unsubscribe /> Unsubscribe &nbsp;&nbsp;
+            <input id="cbOpen" type="checkbox" value="1" @ViewBag.Open /> Open &nbsp;&nbsp;
+            <input id="cbBounce" type="checkbox" value="1" @ViewBag.Bounce /> Bounce &nbsp;&nbsp;
+            <input id="cbClick" type="checkbox" value="1" @ViewBag.Click /> Click &nbsp;&nbsp;
+            <a class="btn btn-default load" href="#" onclick="javascript: Envios();">@Resources.Search</a>
+        </div>
+        <div class="grid-wrap">
+            <div id="grid-list">@{Html.RenderPartial("_AjaxPaging_Envios", Model);}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_TagVM>
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewBag.Title = "Tags";
+    ViewDataDictionary<BR_AutoResponder_TagVM> dic = new ViewDataDictionary<BR_AutoResponder_TagVM>();
+}
+
+<div class="well" style="font-size:large;">
+    @Html.ActionLink("Tags", "Index") &nbsp;&nbsp;&nbsp; @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-primary" })
+</div>
+<div class="row">
+    <div class="col-md-3 col-md-push-9">
+        <h4>Detalhes</h4>
+        <div id="details-content">
+            <p class="muted">
+                Selecione um item
+            </p>
+        </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+        @{Html.RenderPartial("_ItemsGrid", Model);}
+    </div>
+</div>
+<script type="text/javascript" src="Scripts/app.Admin.js"></script>
+<script>
+    $(function () {
+        pageGrids.dataGrid.onRowSelect(function (e) {
+            var controller = document.location.pathname;
+            $.post(controller + "/GetDetails?id=" + e.row.Id, function (data) {
+            })
+            .done(function (data) {
+                $("#details-content").html(data.Content);
+            })
+            .fail(function () {
+                exibirErro(data, "", undefined);
+            });
+        });
+    });
+</script>

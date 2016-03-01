@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_SendingVM>
+@using System.Web.Mvc;
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewDataDictionary<BR_AutoResponder_SendingVM> dic = new ViewDataDictionary<BR_AutoResponder_SendingVM>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+        columns.Add(m => m.Id).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, int>(x => x.Id, dic).DisplayName);
+        columns.Add(m => m.UserId).Titled("ID do Usuário");
+        columns.Add(m => m.BR_Users.firstName).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, int>(x => x.UserId, dic).DisplayName);
+        columns.Add(m => m.BR_AutoResponder_Template.Id).Titled("ID do Template");
+        columns.Add(m => m.BR_AutoResponder_Template.Subject).Titled("Template");
+        @*
+        columns.Add(m => m.Unsubscribe).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, Nullable<bool>>(x => x.Unsubscribe, dic).DisplayName)
+                .RenderValueAs(o => o.Unsubscribe == true ? "Sim" : "Não");
+        columns.Add(m => m.OpenMail).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, Nullable<bool>>(x => x.OpenMail, dic).DisplayName)
+            .RenderValueAs(o => o.OpenMail == true ? "Sim" : "Não");
+        columns.Add(m => m.Bounce).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, Nullable<bool>>(x => x.Bounce, dic).DisplayName)
+            .RenderValueAs(o => o.Bounce == true ? "Sim" : "Não");
+        columns.Add(m => m.Click).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, Nullable<bool>>(x => x.Click, dic).DisplayName)
+            .RenderValueAs(o => o.Click == true ? "Sim" : "Não");
+        *@
+        columns.Add(m => m.SentDate).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingVM, string>(x => x.SentDate, dic).DisplayName);
+        //columns.Add().Titled("Detalhes").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Detalhes", "Details", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Editar", "Edit", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        //columns.Add().Titled("Excluir").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Excluir", "Delete", new { Id = o.Id }, new {@class="btn btn-warning"}));
+    }).Sortable(true);
+}

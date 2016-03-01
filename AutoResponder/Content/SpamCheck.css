@@ -1,0 +1,824 @@
+/* Reset (http://meyerweb.com/eric/tools/css/reset/)
+-------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,   section, summary, time, mark, audio, video {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Layout
+-------------------------------------------------- */
+
+body {
+	background-color: #0D0D0D;
+	color: #AAA;
+	font: normal 1em/1.6 Georgia, 'Times New Roman', Times, serif;
+}
+
+a:link {
+	color: #FFF;
+}
+a:visited {
+	color: #BBB;
+}
+a:hover,
+a:active {
+	color: #FFF;
+}
+
+pre {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #222;
+	background: rgba(255, 255, 255, .06);
+	font: 12px/1.75 Monaco, Consolas, Courier, monospace;
+	overflow: auto;
+}
+	pre code {
+		text-shadow: 0 1px 0 rgba(0, 0, 0, .75);
+		font: 1em Monaco, Consolas, Courier, monospace;
+	}
+
+var {
+	color: #EEE;
+	white-space: nowrap;
+	font: 12px Monaco, Consolas, Courier, monospace;
+}
+
+.hide {
+	display: none;
+}
+
+
+.wrap {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: #0D0D0D;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E3336', endColorstr='#0D0D0D');						/* IE */
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2E3336), to(#0D0D0D));							/* Webkit (Safari 4  / Chrome 3) */
+	background-image: -webkit-linear-gradient(top, #2E3336 0%, #0D0D0D 100%);												/* Webkit (Safari 5.1/ Chrome 11) */
+	background-image:    -moz-linear-gradient(top, #2E3336 0%, #0D0D0D 100%);												/* Mozilla Firefox 3.6 */
+	background-image:     -ms-linear-gradient(top, #2E3336 0%, #0D0D0D 100%);												/* IE 10 */
+	background-image:      -o-linear-gradient(top, #2E3336 0%, #0D0D0D 100%);												/* Opera 11.1 */
+	background-image:         linear-gradient(top, #2E3336 0%, #0D0D0D 100%);												/* Proposed W3C Markup */
+}
+	.wrap-beta {
+		position: relative;
+		max-width: 1400px;
+		min-width:  980px;
+		height: 100%;
+		min-height: 670px;
+		margin: 0 auto;
+	}
+
+header,
+footer,
+#main {
+	position: absolute;
+	left: 0;
+	width: 50%;
+	z-index: 100;
+}
+
+
+header {
+	top: 2.5%;
+}
+	header h1 {
+		position: absolute;
+		top: 10px;
+		left: 41px;
+		width: 139px;
+		height: 22px;
+		background: url(http://spamcheck.postmarkapp.com/images/logo.png) no-repeat 0 0;
+		text-indent: -9999em;
+		overflow: hidden;
+	}
+		header h1 a {
+			display: block;
+		}
+
+	header #sharing {
+		position: absolute;
+		top: 10px;
+		right: 30px;
+		height: 20px;
+		font: .8em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	}
+		#sharing #fb-root {
+			display: none;
+		}
+		#sharing .fb-like {
+			vertical-align: top;
+		}
+
+
+footer {
+	bottom: 2.5%;
+}
+	footer p {
+		margin: 0 30px;
+		color: #555;
+		font: .75em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	}
+	footer a:link,
+	footer a:visited {
+		color: #555;
+		-webkit-transition: color .1s ease-in-out;
+		   -moz-transition: color .1s ease-in-out;
+		    -ms-transition: color .1s ease-in-out;
+		     -o-transition: color .1s ease-in-out;
+		        transition: color .1s ease-in-out;
+	}
+	footer a:hover {
+		color: #999;
+	}
+
+
+#main {
+	top: 20%;
+	padding-bottom: 18px;
+}
+	#main section {
+		position: relative;
+		margin: 0 29px;
+		border-width: 2px;
+		border-style: solid;
+		border-color: #555;
+		border-color: rgba(255, 255, 255, .2);
+		padding: 29px 29px 67px; /* default padding [29] + button offset [38] */
+		font-size: .95em;
+	}
+		section .button {
+			position: absolute;
+			left: 50%;
+			bottom: -38px; /* (button height [74] + section border [2]) / 2 */
+			width: 208px;
+			height: 74px;
+			margin: 0 0 0 -104px;
+			border: 0;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			padding: 0;
+			background-color: #FFF;
+			color: #333;
+			text-align: center;
+			text-decoration: none;
+			font: bold 1em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+
+
+	/* API */
+
+	#api {
+	}
+		#api h1 {
+			margin-bottom: 1em;
+			color: #FFF;
+			text-align: center;
+			line-height: 1.25;
+			font-weight: normal;
+			font-size: 1.65em;
+		}
+			#api h1 span {
+				display: block;
+			}
+
+		#api p {
+			margin: 0 0 1em;
+			text-align: justify;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+		#api p:last-of-type {
+			margin-bottom: 0;
+		}
+			#api p strong {
+				font-weight: normal;
+				font-style: italic;
+				color: #FFF;
+			}
+
+		#api a.button {
+			height: 46px;
+			padding-top: 28px;
+			color: #333;
+		}
+
+
+	/* Form */
+
+	#check {
+	}
+		#check textarea {
+			display: block;
+			width: 100%;
+			height: 100px;
+			margin: -29px -29px -67px;
+			border: 0;
+			padding: 29px 29px 39px;
+			background-color: #E6E6E6;
+			color: #333;
+			font: .8em Monaco, Consolas, Courier, monospace;
+			overflow: auto;
+			overflow-x: hidden;
+		}
+		#check textarea:focus {
+			background-color: #FFF;
+			outline: none;
+		}
+		#check input.button {
+			background-color: #414141;
+			color: #FFF;
+			cursor: pointer;
+		}
+		#check p.hint {
+			position: absolute;
+			bottom: -75px; left: 0;
+			width: 100%;
+			padding: 5px 0;
+			text-align: center;
+			font: .8em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+			#check p.hint a {
+				text-decoration: none;
+			}
+			#check p.hint a span {
+				color: #444;
+				text-decoration: underline;
+			}
+			#check p.hint a strong {
+				margin-right: .33em;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+				padding: .2em .3em .3em .4em;
+				background-color: #444;
+				color: #000;
+				text-transform: uppercase;
+				font-size: .9em;
+			}
+		#check p.hint a span,
+		#check p.hint a strong {
+			-webkit-transition: all .1s ease-in-out;
+			   -moz-transition: all .1s ease-in-out;
+			    -ms-transition: all .1s ease-in-out;
+			     -o-transition: all .1s ease-in-out;
+			        transition: all .1s ease-in-out;
+		}
+			#check p.hint a:hover span {
+				color: #777;
+			}
+			#check p.hint a:hover strong {
+				background-color: #777;
+			}
+
+		#check .error {
+			position: relative;
+			margin: -31px -31px 29px;
+			border: 2px solid #510;
+			border-bottom-width: 1px;
+			padding: .7em 29px .85em;
+			background: #920 !important;
+			color: #FFF;
+			font-size: .9em;
+		}
+
+	/* Or */
+
+	#or {
+		width: 60px;
+		height: 120px;
+		margin: 37px auto 0;
+		background: url(http://spamcheck.postmarkapp.com/images/or.png) no-repeat 0 0;
+		text-indent: -9999em;
+		overflow: hidden;
+	}
+
+
+/* Results */
+
+#results {
+	position: absolute;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	z-index: 50;
+	overflow: hidden;
+}
+	#results h1 {
+		position: absolute;
+		top: 33%;
+		right: 2%;
+		width: 100%;
+		height: 121px;
+		margin: 0;
+		background: url(http://spamcheck.postmarkapp.com/images/yourscore.png) no-repeat 100% 0;
+		text-indent: -9999em;
+		overflow: hidden;
+		z-index: 100;
+	}
+	#envelope-1 {
+		position: absolute;
+		top: 0; right: 0;
+		width: 100%;
+		height: 13.5%;
+		max-height: 182px;
+		background: url(http://spamcheck.postmarkapp.com/images/envelope-1.png) no-repeat 60% 100%;
+		z-index: 50;
+	}
+	#envelope-2 {
+		position: absolute;
+		top: 0; right: 2.5%;
+		width: 457px;
+		height: 16.5%;
+		max-height: 223px;
+		background: url(http://spamcheck.postmarkapp.com/images/envelope-2.png) no-repeat 0 100%;
+		z-index: 50;
+	}
+	#envelope-3 {
+		position: absolute;
+		top: 0; left: 7%;
+		width: 458px;
+		height: 16%;
+		max-height: 185px;
+		background: url(http://spamcheck.postmarkapp.com/images/envelope-3.png) no-repeat 0 100%;
+		z-index: 50;
+	}
+
+	#inbox {
+		position: absolute;
+		bottom: 0; left: 0;
+		width: 100%;
+		min-width: 490px;
+		height: 26%;
+		max-height: 224px;
+		z-index: 50;
+	}
+		#inbox span {
+			position: absolute;
+			top: 0;
+			width: 47%;
+			height: 224px;
+			background-image: url(http://spamcheck.postmarkapp.com/images/inbox.png);
+			background-repeat: no-repeat;
+		}
+		#inbox #i1 {
+			left: 3%;
+			background-position: 0 0;
+		}
+		#inbox #i2 {
+			left: 50%;
+			margin-left: -1px;
+			background-position: 100% 0;
+		}
+
+	#score {
+		position: absolute;
+		width: 250px;
+		height: 200%;
+		top: -50%; left: 50%;
+		margin-left: -125px; /* half width */
+		background: url(http://spamcheck.postmarkapp.com/images/score.png) no-repeat 0 50%;
+		z-index: 49;
+	}
+		#score span.unknown {
+			position: absolute;
+			width: 57px;
+			height: 81px;
+			top: 50%; left: 50%;
+			margin: -40px 0 0 -28px;
+			background: url(http://spamcheck.postmarkapp.com/images/score-unknown.png) no-repeat 0 0;
+			text-indent: -9999em;
+			overflow: hidden;
+		}
+		#score span.loading {
+			position: absolute;
+			width: 202px;
+			height: 202px;
+			top: 50%; left: 50%;
+			margin: -101px 0 0 -101px;
+			background: url(http://spamcheck.postmarkapp.com/images/loading.gif) no-repeat 0 0;
+			text-indent: -9999em;
+			overflow: hidden;
+		}
+		#score span.value {
+			position: absolute;
+			width: 234px;
+			height: 234px;
+			top: 50%; left: 50%;
+			margin: -117px 0 0 -117px;
+			background: url(http://spamcheck.postmarkapp.com/images/score-value.png) no-repeat 0 0;
+			color: #FFF;
+			text-align: center;
+			line-height: 1;
+			font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+			#score span.value s {
+				display: block;
+				margin: 70px 0 8px;
+				text-decoration: none;
+				text-shadow: 0 0 3px rgba(0, 0, 0, .6);
+				font-weight: bold;
+				font-style: normal;
+				font-size: 82px;
+			}
+			#score span.value.s-1 s {
+				text-indent: -.4em;
+			}
+			#score span.value.s-1 s,
+			#score span.value.s10 s,
+			#score span.value.s11 s,
+			#score span.value.s12 s,
+			#score span.value.s13 s,
+			#score span.value.s14 s,
+			#score span.value.s15 s,
+			#score span.value.s16 s,
+			#score span.value.s17 s,
+			#score span.value.s18 s,
+			#score span.value.s19 s,
+			#score span.value.s20 s,
+			#score span.value.s21 s,
+			#score span.value.s22 s,
+			#score span.value.s23 s,
+			#score span.value.s24 s,
+			#score span.value.s25 s {
+				margin: 76px 0 14px;
+				font-size: 70px;
+			}
+
+			#score span.value b {
+				display: block;
+				color: #999;
+				line-height: 1.2;
+				font-weight: normal;
+				font-size: 14px;
+			}
+			#score span.value i {
+				position: absolute;
+				top: 0; left: 0;
+				width: 12px;
+				height: 12px;
+				background: url(http://spamcheck.postmarkapp.com/images/score-pointer.png) no-repeat 0 0;
+			}
+
+		#score span.value.s-1 i { top: 111px; left: 200px; } /* +11  +1 */
+		#score span.value.s-1 s { color: #2D7A5D; }
+
+		#score span.value.s0 i  { top: 100px; left: 199px; } /* +11  +2 */
+		#score span.value.s0 s  { color: #4A8C62; }
+
+		#score span.value.s1 i  { top: 89px;  left: 197px; } /* +10  +4 */
+		#score span.value.s1 s  { color: #589356; }
+
+		#score span.value.s2 i  { top: 79px;  left: 193px; } /*  +9  +3 */
+		#score span.value.s2 s  { color: #679A4D; }
+
+		#score span.value.s3 i  { top: 70px;  left: 190px; } /* +10  +6 */
+		#score span.value.s3 s  { color: #7BA348; }
+
+		#score span.value.s4 i  { top: 60px;  left: 184px; } /*  +8  +6 */
+		#score span.value.s4 s  { color: #8CAA42; }
+
+		#score span.value.s5 i  { top: 52px;  left: 178px; } /*  +8  +8 */
+		#score span.value.s5 s  { color: #ABB440; }
+
+		#score span.value.s6 i  { top: 44px;  left: 170px; } /*  +6  +9 */
+		#score span.value.s6 s  { color: #CEC143; }
+
+		#score span.value.s7 i  { top: 38px;  left: 161px; } /*  +6  +9 */
+		#score span.value.s7 s  { color: #E6C946; }
+
+		#score span.value.s8 i  { top: 32px;  left: 152px; } /*  +4  +9 */
+		#score span.value.s8 s  { color: #F6CF4E; }
+
+		#score span.value.s9 i  { top: 28px;  left: 143px; } /*  +4 +11 */
+		#score span.value.s9 s  { color: #F5C650; }
+
+		#score span.value.s10 i { top: 24px;  left: 132px; } /*  +1 +10 */
+		#score span.value.s10 s { color: #F3AF53; }
+
+		#score span.value.s11 i { top: 23px;  left: 122px; } /*  +1 +11 */
+		#score span.value.s11 s { color: #F29D52; }
+
+		#score span.value.s12 i { top: 22px;  left: 111px; }
+		#score span.value.s12 s { color: #F29E52; }
+
+		#score span.value.s13 i { top: 23px;  left: 100px; } /*  +1 -11 */
+		#score span.value.s13 s { color: #F39D52; }
+
+		#score span.value.s14 i { top: 24px;  left: 90px; }  /*  +1 -10 */
+		#score span.value.s14 s { color: #F39A51; }
+
+		#score span.value.s15 i { top: 28px;  left: 79px; }  /*  +4 -11 */
+		#score span.value.s15 s { color: #EF7C52; }
+
+		#score span.value.s16 i { top: 32px;  left: 70px; }  /*  +4  -9 */
+		#score span.value.s16 s { color: #F07C52; }
+
+		#score span.value.s17 i { top: 38px;  left: 61px; }  /*  +6  -9 */
+		#score span.value.s17 s { color: #EE784C; }
+
+		#score span.value.s18 i { top: 44px;  left: 52px; }  /*  +6  -9 */
+		#score span.value.s18 s { color: #EE7143; }
+
+		#score span.value.s19 i { top: 52px;  left: 44px; }  /*  +8  -8 */
+		#score span.value.s19 s { color: #EA5C35; }
+
+		#score span.value.s20 i { top: 60px;  left: 38px; }  /*  +8  -6 */
+		#score span.value.s20 s { color: #E9502C; }
+
+		#score span.value.s21 i { top: 70px;  left: 32px; }  /* +10  -6 */
+		#score span.value.s21 s { color: #E8502B; }
+
+		#score span.value.s22 i { top: 79px;  left: 29px; }  /*  +9  -3 */
+		#score span.value.s22 s { color: #E34D2F; }
+
+		#score span.value.s23 i { top: 89px;  left: 25px; }  /* +10  -4 */
+		#score span.value.s23 s { color: #DC4938; }
+
+		#score span.value.s24 i { top: 100px; left: 23px; }  /* +11  -2 */
+		#score span.value.s24 s { color: #D44242; }
+
+		#score span.value.s25 i { top: 111px; left: 22px; }  /* +11  -1 */
+		#score span.value.s25 s { color: #D14244; }
+
+
+
+	#output {
+		position: absolute;
+		top: 30%; left: -100%;
+		width: 50%;
+		min-width: 670px;
+		height: auto;
+		z-index: 1000;
+	}
+		#output pre {
+			margin: 0 30px;
+			-webkit-border-top-right-radius: 0;
+			-moz-border-radius-topright: 0;
+			border-top-right-radius: 0;
+			padding: 30px;
+			color: #AAA;
+		}
+		#output a.close {
+			position: absolute;
+			top: 0; right: 0;
+			width: 30px;
+			-webkit-border-top-right-radius: 3px;
+			-moz-border-radius-topright: 3px;
+			border-top-right-radius: 3px;
+			-webkit-border-bottom-right-radius: 3px;
+			-moz-border-radius-bottomright: 3px;
+			border-bottom-right-radius: 3px;
+			padding: 3px 0;
+			background: #222;
+			background: rgba(255, 255, 255, .06);
+			color: #AAA;
+			text-align: center;
+			text-decoration: none;
+		}
+		#output a.close:hover {
+			color: #FFF;
+		}
+
+
+
+/* Adaptive Screen
+-------------------------------------------------- */
+
+/* browser width < 1100px */
+
+.narrowscreen {
+}
+	.narrowscreen #output {
+		min-width: 590px;
+	}
+		.narrowscreen #output pre {
+			font-size: 10px;
+		}
+
+
+/* browser height < 1020px */
+
+.smallscreen {
+}
+	.smallscreen #api {
+		line-height: 1.5;
+	}
+		.smallscreen #api h1 {
+			margin: -.25em 0 .75em;
+		}
+		.smallscreen #api p:last-of-type {
+			margin-bottom: -1em;
+		}
+
+	.smallscreen #or {
+		margin: 17px auto -20px;
+	}
+
+
+/* browser height < 720px */
+
+.tinyscreen {
+}
+	.tinyscreen #api {
+		margin-bottom: 46px;
+		line-height: 1.5;
+	}
+		.tinyscreen #api h1 {
+			margin: -.75em 0 .6em;
+			font-size: 1.3em;
+		}
+		.tinyscreen #api p {
+			font-size: .9em;
+		}
+		.tinyscreen #api p:last-of-type {
+			margin-bottom: -1.25em;
+		}
+	.tinyscreen #or {
+		display: none;
+	}
+	.tinyscreen section .button {
+		bottom: -31px;
+		width: 166px;
+		height: 60px;
+		margin: 0 0 0 -83px;
+	}
+	.tinyscreen #api a.button {
+		height: 40px;
+		padding-top: 20px;
+	}
+
+
+
+/* Doc
+-------------------------------------------------- */
+
+#doc {
+}
+	#doc .wrap {
+		height: auto !important;
+		overflow: visible;
+	}
+	#doc .wrap-beta {
+		height: auto !important;
+		min-width: 980px;
+		max-width: none;
+		overflow: hidden;
+	}
+
+	#doc header,
+	#doc footer,
+	#doc #main {
+		position: relative;
+		top: 0; right: 0; bottom: 0; left: 0;
+		width: 60%;
+		min-width: 680px;
+		max-width: 980px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	#doc header {
+		height: 32px;
+		margin: 32px auto 42px;
+	}
+		#doc header a.back {
+			position: absolute;
+			top: 14px;
+			right: 30px;
+			height: 20px;
+			color: #999;
+			text-decoration: none;
+			font-size: .9em;
+		}
+		#doc header a.back:hover {
+			color: #FFF;
+			text-decoration: underline;
+		}
+
+	#doc footer {
+	}
+		#doc footer p {
+			margin: 32px 60px;
+		}
+
+	#doc #envelope-2 {
+		top: 10px; right: 0;
+		width: 11%;
+	}
+	#doc #envelope-3 {
+		right: 0; left: auto;
+		width: 15%;
+	}
+	#doc #inbox {
+		bottom: -20px; left: 0;
+		width: 45%;
+		max-width: 33%;
+		min-width: 0;
+	}
+		#doc #inbox span {
+			background-position: 100% 0;
+		}
+
+	#doc #main {
+		padding: 0;
+	}
+		#doc article {
+			margin: 0 29px;
+			border-width: 2px;
+			border-style: solid;
+			border-color: #555;
+			border-color: rgba(255, 255, 255, .2);
+			padding: 29px;
+			font-size: .95em;
+		}
+			#doc article h1 {
+				margin: .5em 0 1.5em;
+				color: #FFF;
+				text-align: center;
+				line-height: 1.25;
+				font-weight: normal;
+				font-size: 1.65em;
+			}
+			#doc article h2 {
+				margin: 2em 0 0;
+				color: #FFF;
+				font-weight: normal;
+				font-size: 1.3em;
+			}
+			#doc article ul {
+				margin: 1em 0;
+			}
+				#doc article ul li {
+					margin: 0 0 .33em 1.6em;
+					list-style: square;
+				}
+
+			#doc article p {
+				margin: 1em 0;
+				text-align: justify;
+				-webkit-hyphens: auto;
+				-moz-hyphens: auto;
+				hyphens: auto;
+			}
+				#doc article p strong {
+					color: #EEE;
+					font-weight: normal;
+				}
+
+			#doc article pre {
+				margin: 1.5em -15px 2.75em;
+				padding: 1.6em 15px 1.7em;
+				color: #EEE;
+			}
+				#doc article pre .code-row {
+					display: block;
+					margin-bottom: -1.6em;
+					white-space: pre-wrap;
+					line-height: 1.75;
+					overflow: hidden;
+				}
+				#doc article pre .comment {
+					float: right;
+					width: 70%;
+					color: #888;
+					white-space: normal;
+					text-indent: -1.75em;
+					text-shadow: none;
+					vertical-align: top;
+				}
+

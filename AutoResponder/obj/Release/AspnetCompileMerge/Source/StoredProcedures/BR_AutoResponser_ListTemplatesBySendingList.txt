@@ -1,0 +1,12 @@
+﻿CREATE PROCEDURE [dbo].[BR_AutoResponser_ListTemplatesBySendingList]
+	@param_SendingList int
+AS
+BEGIN
+	SELECT t.Id, t.Sequence, t.Interval, t.Sender, t.Subject,  
+	SUM(CAST(s.Unsubscribe AS INT)), SUM(CAST(s.OpenMail AS INT)), SUM(CAST(s.Bounce AS INT)), SUM(CAST(s.Click AS INT)), COUNT(s.Id)  
+	FROM BR_AutoResponder_Template t  
+	INNER JOIN BR_AutoResponder_SendingList l ON t.SendingListid = l.Id  
+	LEFT OUTER JOIN BR_AutoResponder_Sending s ON s.TemplateId = t.Id  
+	WHERE l.Id = @param_SendingList  
+	GROUP BY t.Id, t.Sequence, t.Interval, t.Sender, t.Subject ORDER BY t.Sequence ASC
+END

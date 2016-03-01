@@ -1,0 +1,127 @@
+﻿@using System;
+@{
+    ViewBag.Title = "Revalee Sample";
+}
+<link href="/Content/RevaleeSampleSite.css" rel="stylesheet"/>
+<h4>Testing console for the Revalee service.</h4>
+<br />
+<fieldset>
+	<div>
+		<div class="labeled-input">
+            <label id="serviceBaseUrlLabel" for="serviceBaseUrl">
+            Service Base URL:</label><input id="serviceBaseUrl" name="serviceBaseUrl" type="text" value="@(ViewBag.RevaleeServiceBaseUri)" style="width: 160px;" /></div>
+		<div class="labeled-input">
+            <label id="callbackTimeLabel" for="callbackTime">
+            Schedule Time:</label><input id="callbackTime" name="callbackTime" type="datetime-local" size="30" style="width: 180px;" /></div>
+		<div class="labeled-input">
+            <label id="parameterValueLabel" for="parameterValue">
+            Parameter:</label><input id="parameterValue" name="parameterValue" type="text" value="1" size="3" style="width: 25px;" /></div>
+        <div class="labeled-input">
+            <label id="destinationEmailLabel" for="destinationEmailValue">
+            To E-mail:</label><input id="destinationEmailValue" name="destinationEmailValue" type="text" value="pmartins@proteste.org.br" style="width: 200px;" /></div>
+		<div class="labeled-input">
+            <input id="asyncOption" name="asyncOption" type="checkbox" /><label id="asyncOptionLabel" for="asyncOption">Async</label></div>
+		<button id="submitButton" type="button">Submit</button>
+	</div>
+</fieldset>
+<div id="results"></div>
+<footer>
+	<p>&copy; 2014 Sage Analytic Technologies, LLC.
+        <small>
+            Client library: Revalee.Client.Mvc
+            <span>v</span>
+            @System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetAssembly(typeof(Revalee.Client.Mvc.RevaleeClientSettingsAttribute)).Location).ProductVersion
+        </small>
+	</p>
+</footer>
+<script type="text/javascript">
+	// Define the auto-refresh flag
+	var timerStarted = false;
+
+	// Define the url prefix of this web application
+	var currentAuthority = "@this.Request.Url.GetLeftPart(UriPartial.Authority)";
+
+	// Fetch contents of the callback log using AJAX
+	function refresh() {
+		$.ajax({
+			type: "GET",
+			url: "/RevaleeTest/ViewLog",
+			cache: false
+		}).done(function (html) {
+			$("#results").html(html);
+		});
+
+		if (timerStarted) {
+			setTimeout(refresh, 1000);
+		}
+	}
+
+	// Set the default callback time to the current time plus 10 seconds
+	function setCallbackTime() {
+		var currentTime = new Date();
+		currentTime.setTime(currentTime.getTime() + 10000);
+		var timeString = currentTime.getFullYear() + "-"
+			+ (currentTime.getMonth() < 9 ? "0" : "") + (currentTime.getMonth() + 1) + "-"
+			+ (currentTime.getDate() < 10 ? "0" : "") + currentTime.getDate() + "T"
+			+ (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours() + ":"
+			+ (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes() + ":"
+			+ (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+		$("#callbackTime").val(timeString);
+	}
+
+	// Submit button click handler
+	function submitButtonClickHandler() {
+		// Set up the callback parameters
+		var serviceBaseUrl = $("#serviceBaseUrl").val();
+		var callbackTime = $("#callbackTime").val();
+		callbackTime = new Date(callbackTime).toISOString();
+		var parameterValue = $("#parameterValue").val();
+		var destinationEmail = $("#destinationEmailValue").val();
+		var asyncOption = $("#asyncOption").prop("checked");
+
+		var scheduleUrl = "/RevaleeTest/Schedule";		
+		if (asyncOption) {
+			scheduleUrl += "Async";
+		}
+
+		var callbackUrl = currentAuthority + "/RevaleeTest/Callback";
+		if (parameterValue != "") {
+		    parameterValue = encodeURIComponent(parameterValue);
+		    //destinationEmail = encodeURIComponent(destinationEmail);
+		    callbackUrl += "/?id=" + parameterValue + "&destinationEmail=" + destinationEmail;
+		}
+
+		// *** AJAX call to schedule a callback ***
+		$.ajax({
+			type: "POST",
+			url: scheduleUrl,
+			data: {
+				serviceBaseUri: serviceBaseUrl,
+				callbackTime: callbackTime,
+				callbackUri: callbackUrl,
+				destinationEmail: destinationEmail
+			}
+		});
+
+		// Start the auto-refresh timer
+		if (!timerStarted) {
+			setTimeout(refresh, 1000);
+			timerStarted = true;
+		}
+
+		setCallbackTime();
+
+		// Auto-increment numeric parameter values
+		if (!isNaN(parameterValue)) {
+		    var value = Number(parameterValue) + 1;
+			$("#parameterValue").val(value);
+		}
+	}
+
+	// Actions triggered on the page ready event
+	$(function () {
+		setCallbackTime();
+		$("#submitButton").click(submitButtonClickHandler);
+		refresh();
+	});
+</script>

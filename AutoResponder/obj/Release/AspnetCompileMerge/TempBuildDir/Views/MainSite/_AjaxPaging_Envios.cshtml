@@ -1,0 +1,66 @@
+﻿@model PagedList.IPagedList<AutoResponder.ViewModels.EnviosVM>
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Envios";
+    ViewDataDictionary<EnviosVM> dic = new ViewDataDictionary<EnviosVM>();
+}
+
+@if (Model.Count() > 0)
+{
+    @Html.Grid(Model).Named("dataGrid_envios").Columns(columns =>
+    {
+        columns.Add(m => m.FullName).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, string>(x => x.FullName, dic).DisplayName);
+        columns.Add(m => m.Subject).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, string>(x => x.Subject, dic).DisplayName);
+        columns.Add(m => m.Email).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, string>(x => x.Email, dic).DisplayName);
+        columns.Add(m => m.SentDate).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, DateTime>(x => x.SentDate, dic).DisplayName);
+        columns.Add(m => m.Unsubscribe).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, int>(x => x.Unsubscribe, dic).DisplayName);
+        columns.Add(m => m.OpenMail).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, int>(x => x.OpenMail, dic).DisplayName);
+        columns.Add(m => m.Bounce).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, int>(x => x.Bounce, dic).DisplayName);
+        columns.Add(m => m.Click).Titled(ModelMetadata.FromLambdaExpression<EnviosVM, int>(x => x.Click, dic).DisplayName);
+    }).Sortable(false).WithPaging(10);
+    <div>
+        <br />
+        Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Envios", 
+            new { SendingList = ViewBag.SendingList, page, grid_column = ViewBag.grid_column, grid_dir = ViewBag.grid_dir, 
+                Open = ViewBag.pOpen, Unsubscribe = ViewBag.pUnsubscribe, Bounce = ViewBag.pBounce, Click = ViewBag.pClick }), 
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.PageNumbersOnly, new AjaxOptions(){  HttpMethod = "GET", UpdateTargetId = "envios"}))
+    </div>
+}
+else
+{    
+    <table class="table table-striped grid-table">
+        <tr class="grid-empty-text">
+            <td>Nenhum dado a ser exibido
+            </td>
+        </tr>
+    </table>
+}
+
+<script src="~/Scripts/gridmvc.ajax.js"></script>
+<script type="text/javascript">
+    GridMvcAjax.demo.init(
+    {
+        updateGridAction: '@Url.Action("Envios")'
+    });
+</script>
+
+<script type="text/javascript">
+    /*
+    var controller = "MainSite/Envios/";
+    $(".grid-header-title").find('a').each(function () {
+        $(this).attr('href', $(this).attr('href').replace(/grid-column/g, 'grid_column'));
+        $(this).attr('href', $(this).attr('href').replace(/grid-dir/g, 'grid_dir'));
+        $(this).attr("onclick", "javascript: renderSort('" + controller + $(this).attr('href') + "', $(this), 'envios');");
+        $(this).attr("href", "javascript: void();");
+    });
+    */
+    $("td[data-name='Unsubscribe']:contains('0')").html('<span class="glyphicon glyphicon-minus"></span>');
+    $("td[data-name='OpenMail']:contains('0')").html('<span class="glyphicon glyphicon-minus"></span>');
+    $("td[data-name='Bounce']:contains('0')").html('<span class="glyphicon glyphicon-minus"></span>');
+    $("td[data-name='Click']:contains('0')").html('<span class="glyphicon glyphicon-minus"></span>');
+</script>

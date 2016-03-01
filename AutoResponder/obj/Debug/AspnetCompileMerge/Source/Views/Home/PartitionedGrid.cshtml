@@ -1,0 +1,19 @@
+﻿@model AutoResponder.Models.GridData
+@{
+    ViewBag.Title = "Grid.Mvc.Ajax Partitioned Demo Page";
+}
+
+@{
+    Html.RenderPartial("_CarGrid", Model.Grid);
+}
+
+@section scripts
+{
+    <script src="~/Scripts/gridmvcajax.demo.js"></script>
+    <script type="text/javascript">
+     GridMvcAjax.demo.init(
+    {
+        updateGridAction: '@Url.Action("PartitionedGridData")'
+    });
+    </script>
+}

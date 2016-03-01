@@ -1,0 +1,17 @@
+﻿@{
+    string username = "";
+    if (Context.User != null)
+    {
+        username = Context.User.Identity.Name;
+        username = User.Identity.Name.Replace(@"BRASIL\", "");
+    }
+    //if (username == "lpm" || username == "mol")
+    //{
+        <li>@Html.ActionLink("Entradas de Usuário", "Index", "UserEntry", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Envios", "Index", "Sending", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Listas", "Index", "SendingList", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Tags", "Index", "Tag", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Templates", "Index", "Template", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Usuários", "Index", "Users", null, new { @class = "" })</li>
+    //}
+}

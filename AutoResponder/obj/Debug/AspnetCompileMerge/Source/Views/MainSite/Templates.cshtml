@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<AutoResponder.ViewModels.TemplatesVM>
+@using PagedList;
+@using PagedList.Mvc;
+
+<div id="Resultado" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        Resultado <span class="badge">@(Model.Count())</span>
+        &nbsp;<a class="btn btn-default load" href="#" onclick="javascript: Templates();">refresh</a>
+        &nbsp;<button id="showCreateTemplate" class="btn btn-primary" onclick="javascript: ShowCreateTemplate();">Novo</button>
+    </div>
+    @if (HttpContext.Current.Request.IsLocal)
+    {
+        <div class="panel-heading" style="font-size:large;">
+            <pre style="font-size:small;">@ViewBag.Sql_Templates</pre>
+        </div>
+    }    
+    <div class="panel-body">
+        <div class="grid-wrap">
+            @*<button class="btn btn-primary" data-toggle="modal" data-target="#CreateTemplate" data-remote="MainSite/CreateTemplate/@(Model.Count())" 
+                data-keyboard="true">Criar template</button>*@
+            <div id="grid-list">@{Html.RenderPartial("_AjaxPaging_Templates", Model);}</div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="VerTemplate" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>
+@*
+<div class="modal fade" id="CreateTemplate" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditTemplate" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>
+*@
+<div class="modal fade" id="TestSendingTemplate" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>

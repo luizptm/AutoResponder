@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a66201d9cf4f499db815d167e0a5aab9" Name="Diagram1">
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_Users" Width="1.875" PointX="0.5" PointY="3.5" />
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_AutoResponder_Tag" Width="2.125" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_AutoResponder_Sending" Width="2.25" PointX="2.875" PointY="7" />
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_AutoResponder_UserEntry" Width="2.5" PointX="5.875" PointY="4" />
+        <AssociationConnector Association="Brazil_SmallModel.FK_BR_AutoResponder_Sending_BR_Users" />
+        <AssociationConnector Association="Brazil_SmallModel.FK_BR_AutoResponder_UserEntry_BR_Users" />
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_AutoResponder_SendingList" Width="2.375" PointX="10.125" PointY="0.875" />
+        <AssociationConnector Association="Brazil_SmallModel.FK_AutoResponder_UserEntry_AutoResponder_SendingList" />
+        <EntityTypeShape EntityType="Brazil_SmallModel.BR_AutoResponder_Template" Width="2.5" PointX="9.5" PointY="6.375" />
+        <AssociationConnector Association="Brazil_SmallModel.FK_BR_AutoResponder_Sending_BR_AutoResponder_Template" />
+        <AssociationConnector Association="Brazil_SmallModel.FK_AutoResponder_Template_AutoResponder_SendingList" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

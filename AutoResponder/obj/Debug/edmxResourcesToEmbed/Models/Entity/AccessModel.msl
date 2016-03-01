@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ACEntitiesStoreContainer" CdmEntityContainer="AC_Entities">
+    <EntitySetMapping Name="BR_AccessControl_Action">
+      <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Action">
+        <MappingFragment StoreEntitySet="BR_AccessControl_Action">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AccessControl_Application">
+      <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Application">
+        <MappingFragment StoreEntitySet="BR_AccessControl_Application">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AccessControl_Role">
+      <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_Role">
+        <MappingFragment StoreEntitySet="BR_AccessControl_Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BR_AccessControl_ActionRole" TypeName="ACEntities.BR_AccessControl_ActionRole" StoreEntitySet="BR_AccessControl_ActionRole">
+      <EndProperty Name="BR_AccessControl_Action">
+        <ScalarProperty Name="Id" ColumnName="ActionId" />
+      </EndProperty>
+      <EndProperty Name="BR_AccessControl_Role">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="BR_AccessControl_User">
+      <EntityTypeMapping TypeName="ACEntities.BR_AccessControl_User">
+        <MappingFragment StoreEntitySet="BR_AccessControl_User">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Trigram" ColumnName="Trigram" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

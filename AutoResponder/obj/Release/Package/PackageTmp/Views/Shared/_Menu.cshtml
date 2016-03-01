@@ -1,0 +1,18 @@
+﻿@using AutoResponder.Resources;
+@{
+    string username = "";
+    if (Context.User != null)
+    {
+        username = Context.User.Identity.Name;
+        username = User.Identity.Name.Replace(@"BRASIL\", "");
+    }
+    //if (username == "lpm" || username == "mol")
+    //{
+        <li>@Html.ActionLink(Resources.UserEntry, "Index", "UserEntry", null, new { @class = "" })</li>
+        <li>@Html.ActionLink(Resources.Sendings, "Index", "Sending", null, new { @class = "" })</li>
+        <li>@Html.ActionLink(Resources.SendingList, "Index", "SendingList", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Tags", "Index", "Tag", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Templates", "Index", "Template", null, new { @class = "" })</li>
+        <li>@Html.ActionLink(Resources.Users, "Index", "Users", null, new { @class = "" })</li>
+    //}
+}

@@ -1,0 +1,43 @@
+﻿@using System;
+@using AutoResponder.Resources;
+@{
+    ViewBag.Title = "Resultado";
+    //Layout = "~/Views/Shared/_Layout_Stats.cshtml";
+}
+
+@{
+    String action = !String.IsNullOrEmpty(Request["action"]) ? Request["action"].ToString() : "0";
+    String idt = !String.IsNullOrEmpty(Request["idt"]) ? Request["idt"].ToString() : "0";
+    String idu = !String.IsNullOrEmpty(Request["idu"]) ? Request["idu"].ToString() : "0";
+}
+@{
+    var title = "";
+    var msg = "";
+    if (action == "c")
+    {
+        title = "";
+        msg = Resources.Click;
+    }
+    else if (action == "o")
+    {
+        title = "";
+        msg = "Open";
+    }
+    else if (action == "u")
+    {
+        title = "";
+        msg = Resources.RegisterRemovedWithSuccess;
+    }
+    ViewBag.Title = title;
+}
+
+<h2>Resultado</h2>
+<div class="well">
+    @msg
+</div>
+@Html.Raw(System.Web.HttpUtility.HtmlDecode(ViewBag.Result))
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#result").hide();
+    });
+</script>

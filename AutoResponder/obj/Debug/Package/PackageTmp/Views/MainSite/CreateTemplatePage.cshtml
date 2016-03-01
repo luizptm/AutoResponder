@@ -1,0 +1,123 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TemplateVM
+@using AutoResponder.Resources;
+@using System
+@using System.Web
+@using System.Web.Optimization
+
+<script>
+    $("form").validate({
+        rules: {
+            SendingListId: {
+                required: true
+            },
+            Sequence: {
+                required: true
+            },
+            Interval: {
+                required: true
+            },
+            Sender: {
+                required: true,
+                email: true
+            },
+            Subject: {
+                required: true
+            },
+            Body: {
+                required: true
+            }
+        }
+    });
+</script>
+<div id="divCreateTemplate" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        @if (Model.Sequence == 0)
+        {
+            @Resources.NewTemplateOptin
+        }
+        else
+        {
+            @Resources.NewTemplate
+        }
+    </div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("CreateTemplate", "MainSitePost", null, 
+			new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess(data)", OnFailure = "OnError" }, 
+			new { Id = "CreateTemplateForm", Role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.Hidden("Sender", AutoResponder.Library.Constants.DEFAULT_SENDER_EMAIL)
+
+            <div>
+                <span class="glyphicon glyphicon-asterisk small"></span> @Resources.RequiredFields
+                <br/><br/>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SendingListId)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.DropDownList("SendingListIdShow", (SelectList)ViewBag.SendingListId, "- selecione -", new { disabled = "disabled", @class = "selectpicker" })
+                    @Html.HiddenFor(model => model.SendingListId)
+                    &nbsp;@Html.ValidationMessageFor(model => model.SendingListId)
+                    <script>
+                        var SendingList = $("#SendingList").val();
+                        $("#SendingListIdShow").val(SendingList);
+                        $("#SendingListId").val(SendingList);
+                        $("#SendingListIdShow").selectpicker();
+                    </script>
+                
+                    @Html.LabelFor(model => model.Sequence)<span class="glyphicon glyphicon-asterisk small"></span>:
+					@Html.HiddenFor(model => model.Sequence)
+                    @Html.TextBox("SequenceView", Model.Sequence, new { disabled = "disabled", type = "number", min = "0",  max = "999" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Sequence)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Interval) (em dias)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Interval", "0", new { type = "number", min = "0",  max = "999" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Interval)
+                
+                    @Html.LabelFor(model => model.Sender)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Sender", AutoResponder.Library.Constants.DEFAULT_SENDER_EMAIL, new { disabled = "disabled", size = "50" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Sender)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @Html.TextBox("Subject", "", new { size = "120" })
+                    &nbsp;@Html.ValidationMessageFor(model => model.Subject)
+                </div>
+				@if (Model.Sequence == 0)
+				{
+					<div class="form-group">
+						@Html.LabelFor(model => model.RedirectURL)<span></span>:<br/>
+						http://@Html.TextBoxFor(model => model.RedirectURL, new {size = "120"})
+					</div>
+				}
+                <div>
+                    @Html.LabelFor(model => model.Body)<span class="glyphicon glyphicon-asterisk small"></span>:
+                    @if (Model.Sequence == 0)
+                    {
+                        <text>
+                            <br/>Marcações: <br/>
+                            <i style="color: green;">&lt;!--!STR_NAME!--&gt;</i> - nome do usuário <br/>
+                            <i style="color: green;">&lt;!--!LINK_OPTIN!--&gt;</i> - link de optin
+                        </text>
+                    }
+                    @Html.TextArea("Body", Model.Body, 20, 90, null)
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            loadCKEditor('Body', false);
+                        });
+                    </script>
+                    &nbsp;@Html.ValidationMessageFor(model => model.Body)
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default load" onclick="javascript: Templates();">@Resources.BackToList</button>
+                <button type="submit" class="btn btn-primary load">@Resources.Save</button>
+            </div>
+            if (HttpContext.Current.Request.IsLocal)
+            {
+                <text>&nbsp;<br /><a class="btn btn-default load" href="#" onclick="javascript: ShowCreateTemplate());">@Resources.Refresh</a></text>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_SendingListVM
+
+<script>
+	$("form").validate({
+		rules: {
+			Name: {
+				required: true
+			},
+			Description: {
+				required: true
+			},
+			TagId: {
+				required: true,
+				email: true
+			}
+		}
+	});
+</script>
+
+<div id="divCreateSendingList" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+		Criar Lista
+    </div>
+    <div class="panel-body">
+		@using (Ajax.BeginForm("CreateSendingList", "MainSitePost", null,
+			new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess(data, 'CreateSendingList')", OnFailure = "OnError" }, 
+			new { Id = "CreateSendingListForm", Role = "form" }))
+		{
+			@Html.AntiForgeryToken()
+			@Html.ValidationSummary(true)
+
+			<div>
+				<span class="glyphicon glyphicon-asterisk small"></span> Campos obrigatórios
+				<br/><br/>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Name)<span class="glyphicon glyphicon-asterisk small"></span>:
+					@Html.EditorFor(model => model.Name, "", "Name")
+					&nbsp;@Html.ValidationMessageFor(model => model.Name)
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Description)<span class="glyphicon glyphicon-asterisk small"></span>:
+					@Html.EditorFor(model => model.Description, "", "Description")
+					&nbsp;@Html.ValidationMessageFor(model => model.Description)
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Tags)<span class="glyphicon glyphicon-asterisk small"></span>
+					<i><b>(ao colocar o focus, exibe as tags disponíveis)</b></i>:
+					@Html.EditorFor(model => model.Tags, "", "Tags")
+					&nbsp;@Html.ValidationMessageFor(model => model.Tags)
+					<script> $(".selectpicker").selectpicker(); </script>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CreateTag" data-remote="MainSite/CreateTag">Nova TAG</button>
+				</div>
+			</div>
+			<div>
+                <button type="button" class="btn btn-default load" onclick="javascript: Templates();">Voltar para a lista</button>
+                <button type="submit" class="btn btn-primary load">Salvar</button>
+			</div>
+            if (HttpContext.Current.Request.IsLocal)
+            {
+                <text>&nbsp;<br /><a class="btn btn-default load" href="#" onclick="javascript: ShowCreateTemplate());">refresh</a></text>
+			}
+		}
+    </div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.ajax({
+			url: "/MainSite/GetTags/",
+			success: function (data, textStatus, jqXHR) {
+				//console.log(data);
+				var dataArray = data.split(/,/);
+				//console.log(dataArray);
+				availableTags = dataArray;
+				$("#Tags").tagit({
+					showAutocompleteOnFocus: true,
+					availableTags: availableTags,
+					singleFieldDelimiter: ' ',
+					removeConfirmation: true
+				});
+			},
+			error: function (data, textStatus, jqXHR) {
+			}
+		});
+
+	});
+</script>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Brazil_SmallModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Brazil_SmallModelStoreContainer">
+    <EntitySet Name="BR_AutoResponder_Sending" EntityType="Brazil_SmallModel.Store.BR_AutoResponder_Sending" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BR_AutoResponder_SendingList" EntityType="Brazil_SmallModel.Store.BR_AutoResponder_SendingList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BR_AutoResponder_Tag" EntityType="Brazil_SmallModel.Store.BR_AutoResponder_Tag" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BR_AutoResponder_Template" EntityType="Brazil_SmallModel.Store.BR_AutoResponder_Template" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BR_AutoResponder_UserEntry" EntityType="Brazil_SmallModel.Store.BR_AutoResponder_UserEntry" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BR_Users" EntityType="Brazil_SmallModel.Store.BR_Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AutoResponder_Template_AutoResponder_SendingList" Association="Brazil_SmallModel.Store.FK_AutoResponder_Template_AutoResponder_SendingList">
+      <End Role="BR_AutoResponder_SendingList" EntitySet="BR_AutoResponder_SendingList" />
+      <End Role="BR_AutoResponder_Template" EntitySet="BR_AutoResponder_Template" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoResponder_UserEntry_AutoResponder_SendingList" Association="Brazil_SmallModel.Store.FK_AutoResponder_UserEntry_AutoResponder_SendingList">
+      <End Role="BR_AutoResponder_SendingList" EntitySet="BR_AutoResponder_SendingList" />
+      <End Role="BR_AutoResponder_UserEntry" EntitySet="BR_AutoResponder_UserEntry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BR_AutoResponder_Sending_BR_AutoResponder_Template" Association="Brazil_SmallModel.Store.FK_BR_AutoResponder_Sending_BR_AutoResponder_Template">
+      <End Role="BR_AutoResponder_Template" EntitySet="BR_AutoResponder_Template" />
+      <End Role="BR_AutoResponder_Sending" EntitySet="BR_AutoResponder_Sending" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BR_AutoResponder_Sending_BR_Users" Association="Brazil_SmallModel.Store.FK_BR_AutoResponder_Sending_BR_Users">
+      <End Role="BR_Users" EntitySet="BR_Users" />
+      <End Role="BR_AutoResponder_Sending" EntitySet="BR_AutoResponder_Sending" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BR_AutoResponder_UserEntry_BR_Users" Association="Brazil_SmallModel.Store.FK_BR_AutoResponder_UserEntry_BR_Users">
+      <End Role="BR_Users" EntitySet="BR_Users" />
+      <End Role="BR_AutoResponder_UserEntry" EntitySet="BR_AutoResponder_UserEntry" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BR_AutoResponder_Sending">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TemplateId" Type="int" Nullable="false" />
+    <Property Name="SentDate" Type="datetime" />
+    <Property Name="Unsubscribe" Type="bit" />
+    <Property Name="OpenMail" Type="bit" />
+    <Property Name="Bounce" Type="bit" />
+    <Property Name="Click" Type="bit" />
+    <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BR_AutoResponder_SendingList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tags" Type="ntext" Nullable="false" />
+    <Property Name="Interval" Type="int" Nullable="false" />
+    <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BR_AutoResponder_Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BR_AutoResponder_Template">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SendingListId" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="Interval" Type="int" />
+    <Property Name="Sender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Body" Type="text" Nullable="false" />
+    <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BR_AutoResponder_UserEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SendingListId" Type="int" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="Optin" Type="bit" Nullable="false" />
+    <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BR_Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="varchar" MaxLength="500" />
+    <Property Name="middleName" Type="varchar" MaxLength="500" />
+    <Property Name="lastName" Type="varchar" MaxLength="500" />
+    <Property Name="gender" Type="varchar" MaxLength="15" />
+    <Property Name="birthday" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="250" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="city" Type="varchar" MaxLength="200" />
+    <Property Name="state" Type="char" MaxLength="2" />
+    <Property Name="UPDATE_TIME" Type="datetime" />
+    <Property Name="CREATION_TIME" Type="datetime" />
+    <Property Name="zipcode" Type="nchar" MaxLength="9" />
+    <Property Name="cpf" Type="varchar" MaxLength="50" />
+    <Property Name="hometown" Type="varchar" MaxLength="150" />
+    <Property Name="navigateURL" Type="varchar" MaxLength="150" />
+    <Property Name="verified" Type="bit" />
+    <Property Name="relationshipStatus" Type="varchar" MaxLength="50" />
+    <Property Name="religion" Type="varchar(max)" />
+    <Property Name="politicalView" Type="varchar(max)" />
+    <Property Name="biography" Type="varchar(max)" />
+    <Property Name="languages" Type="varchar(max)" />
+    <Property Name="timezone" Type="float" />
+    <Property Name="location" Type="varchar" MaxLength="150" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="450" />
+    <Property Name="userID" Type="varchar" MaxLength="50" />
+    <Property Name="rg" Type="nchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="14" />
+    <Property Name="tags" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK_AutoResponder_Template_AutoResponder_SendingList">
+    <End Role="BR_AutoResponder_SendingList" Type="Brazil_SmallModel.Store.BR_AutoResponder_SendingList" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BR_AutoResponder_Template" Type="Brazil_SmallModel.Store.BR_AutoResponder_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BR_AutoResponder_SendingList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BR_AutoResponder_Template">
+        <PropertyRef Name="SendingListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoResponder_UserEntry_AutoResponder_SendingList">
+    <End Role="BR_AutoResponder_SendingList" Type="Brazil_SmallModel.Store.BR_AutoResponder_SendingList" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BR_AutoResponder_UserEntry" Type="Brazil_SmallModel.Store.BR_AutoResponder_UserEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BR_AutoResponder_SendingList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BR_AutoResponder_UserEntry">
+        <PropertyRef Name="SendingListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BR_AutoResponder_Sending_BR_AutoResponder_Template">
+    <End Role="BR_AutoResponder_Template" Type="Brazil_SmallModel.Store.BR_AutoResponder_Template" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BR_AutoResponder_Sending" Type="Brazil_SmallModel.Store.BR_AutoResponder_Sending" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BR_AutoResponder_Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BR_AutoResponder_Sending">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BR_AutoResponder_Sending_BR_Users">
+    <End Role="BR_Users" Type="Brazil_SmallModel.Store.BR_Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BR_AutoResponder_Sending" Type="Brazil_SmallModel.Store.BR_AutoResponder_Sending" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BR_Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="BR_AutoResponder_Sending">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BR_AutoResponder_UserEntry_BR_Users">
+    <End Role="BR_Users" Type="Brazil_SmallModel.Store.BR_Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BR_AutoResponder_UserEntry" Type="Brazil_SmallModel.Store.BR_AutoResponder_UserEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BR_Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="BR_AutoResponder_UserEntry">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

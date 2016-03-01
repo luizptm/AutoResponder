@@ -1,0 +1,78 @@
+﻿/**********************************/
+/*** TABLE [BR_AccessControl_Action] ***/
+/**********************************/
+CREATE TABLE [dbo].[BR_AccessControl_Action](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[URL] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_BR_AccessControl_Action] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/**********************************/
+/*** TABLE [BR_AccessControl_ActionRole] ***/
+/**********************************/
+CREATE TABLE [dbo].[BR_AccessControl_ActionRole](
+	[ActionId] [int] IDENTITY(1,1) NOT NULL,
+	[RoleId] [int] NOT NULL,
+ CONSTRAINT [PK_BR_AccessControl_ActionRole] PRIMARY KEY CLUSTERED 
+(
+	[ActionId] ASC,
+	[RoleId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/**********************************/
+/*** TABLE [BR_AccessControl_Application] ***/
+/**********************************/
+CREATE TABLE [dbo].[BR_AccessControl_Application](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[CREATION_DATE] [datetime] NOT NULL,
+ CONSTRAINT [PK_BR_AccessControl_Application] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/**********************************/
+/*** TABLE [BR_AccessControl_Role] ***/
+/**********************************/
+CREATE TABLE [dbo].[BR_AccessControl_Role](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+ CONSTRAINT [PK_BR_AccessControl_Role] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/**********************************/
+/*** TABLE [BR_AccessControl_User] ***/
+/**********************************/
+CREATE TABLE [dbo].[BR_AccessControl_User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Trigram] [char](3) NOT NULL,
+	[Password] [nvarchar](10) NOT NULL,
+	[RoleId] [int] NOT NULL,
+	[CREATION_DATE] [datetime] NOT NULL,
+ CONSTRAINT [PK_BR_AccessControl_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/*** FOREIGN KEYS ***/
+
+ALTER TABLE [dbo].[BR_AccessControl_User]  WITH CHECK ADD  CONSTRAINT [FK_BR_AccessControl_User_BR_AccessControl_Role] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[BR_AccessControl_Role] ([Id])
+
+/*** CONSTRAINTS ***/
+
+ALTER TABLE [dbo].[BR_AccessControl_User] CHECK CONSTRAINT [FK_BR_AccessControl_User_BR_AccessControl_Role]
+GO
+

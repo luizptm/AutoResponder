@@ -1,0 +1,69 @@
+﻿@using System;
+@{
+    ViewBag.Title = "Home";
+}
+
+<script type="text/javascript" src="Scripts/app.MainSite.js"></script>
+<style>
+    input
+    {
+        display: inline-block;
+        height: 35px;
+        padding: 4px 6px;
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: middle;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+    label.error
+    {
+        padding-left: 5px;
+    }
+    .modal-footer {
+        padding: 19px 20px 20px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+</style>
+@{Html.RenderPartial("_ProgessAlert");}
+
+
+    <div class="well">
+        @Html.DropDownList("SendingList", (SelectList)ViewBag.SendingLists, "- selecione uma lista -", new { onchange = "javascript: ChangeLista();", @class = "selectpicker load" })
+        &nbsp;
+        <button type="button" class="btn btn-primary" data-toggle="modal" onclick="javascript: ShowCreateSendingListPage();">Nova lista</button>
+        @if (HttpContext.Current.Request.IsLocal)
+        {
+            <text>&nbsp;<a class="btn btn-default load" href="#" onclick="javascript: RefreshListas();">refresh</a></text>
+        }
+    </div>
+
+
+<div id="listDetails"></div>
+
+<ul id="tabs" class="nav nav-tabs">
+    <li class="active"><a href="#usuarios" data-toggle="tab">Usuários</a></li>
+    <li><a href="#templates" data-toggle="tab">Templates</a></li>
+    <li><a href="#envios" data-toggle="tab">Envios</a></li>
+    <li><a href="#logs" data-toggle="tab">LOG de Envios</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="usuarios"></div>
+    <div class="tab-pane" id="templates"></div>
+    <div class="tab-pane" id="envios"></div>
+    <div class="tab-pane" id="logs">@{Html.RenderAction("Logs", "MainSite"); }</div>
+</div>
+
+<div class="modal fade" id="CreateSendingList" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>
+
+<div class="modal fade" id="CreateTag" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"><div class="modal-body">Carregando...</div></div>
+    </div>
+</div>

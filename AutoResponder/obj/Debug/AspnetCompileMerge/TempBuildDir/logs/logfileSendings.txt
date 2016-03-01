@@ -1,0 +1,4 @@
+2014-06-04 17:37:55.7318 * The request failed. The remote server returned an error: (503) Server Unavailable.[ email: pmartins@proteste.org.br ]
+2014-06-04 17:38:42.0568 * The request failed. The remote server returned an error: (503) Server Unavailable.[ email: pmartins@proteste.org.br ]
+2014-06-04 17:39:45.4908 * The request failed. The remote server returned an error: (503) Server Unavailable.[ email: pmartins@proteste.org.br ]
+2014-06-04 17:41:01.1234 * The request failed. The remote server returned an error: (503) Server Unavailable.[ email: pmartins@proteste.org.br ]

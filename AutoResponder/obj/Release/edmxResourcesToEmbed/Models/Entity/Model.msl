@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Brazil_SmallModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BR_Users">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_Users">
+        <MappingFragment StoreEntitySet="BR_Users">
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="languages" ColumnName="languages" />
+          <ScalarProperty Name="biography" ColumnName="biography" />
+          <ScalarProperty Name="politicalView" ColumnName="politicalView" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="relationshipStatus" ColumnName="relationshipStatus" />
+          <ScalarProperty Name="verified" ColumnName="verified" />
+          <ScalarProperty Name="navigateURL" ColumnName="navigateURL" />
+          <ScalarProperty Name="hometown" ColumnName="hometown" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="CREATION_TIME" ColumnName="CREATION_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AutoResponder_Tag">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_AutoResponder_Tag">
+        <MappingFragment StoreEntitySet="BR_AutoResponder_Tag">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AutoResponder_Sending">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_AutoResponder_Sending">
+        <MappingFragment StoreEntitySet="BR_AutoResponder_Sending">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="Click" ColumnName="Click" />
+          <ScalarProperty Name="Bounce" ColumnName="Bounce" />
+          <ScalarProperty Name="OpenMail" ColumnName="OpenMail" />
+          <ScalarProperty Name="Unsubscribe" ColumnName="Unsubscribe" />
+          <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AutoResponder_UserEntry">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_AutoResponder_UserEntry">
+        <MappingFragment StoreEntitySet="BR_AutoResponder_UserEntry">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="Optin" ColumnName="Optin" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="SendingListId" ColumnName="SendingListId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AutoResponder_SendingList">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_AutoResponder_SendingList">
+        <MappingFragment StoreEntitySet="BR_AutoResponder_SendingList">
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BR_AutoResponder_Template">
+      <EntityTypeMapping TypeName="Brazil_SmallModel.BR_AutoResponder_Template">
+        <MappingFragment StoreEntitySet="BR_AutoResponder_Template">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="SendingListId" ColumnName="SendingListId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

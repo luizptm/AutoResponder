@@ -1,0 +1,63 @@
+﻿@using AutoResponder.Library.Security;
+@using AutoResponder.Resources;
+
+@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string c, string culture)
+{
+    if (culture.StartsWith(c))
+    {
+        @:checked="checked"
+    }
+}
+
+<div class="container-fluid">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">
+            <a href="~/">@Resources.ApplicationName</a>
+            &nbsp;&nbsp;
+            @Html.Partial("_LogOnPartial")
+        </span>
+    </div>
+	@{
+		AccessControl ac = new AccessControl();
+	}
+	<div class="collapse navbar-collapse">
+        @*Current culture: @culture*@
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.ChooseYourLanguage<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    @using(Html.BeginForm("SetCulture", "Base", FormMethod.Get, new {} ))
+                    {
+                        <li style="padding-left: 10px;">
+                            <input type="hidden" id="returnPath" name="returnPath" value="@Request.Url.AbsoluteUri" />
+                            <input name="culture" id="en-us" value="en" type="radio" @selected("en", culture) onchange="$('form').submit();" /> English</li>
+                        <li style="padding-left: 10px;">
+                            <input name="culture" id="pt-br" value="pt" type="radio" @selected("pt", culture) onchange="$('form').submit();" /> Português</li>
+                    }
+                </ul>
+			</li>
+        </ul>
+        @if (ac.GetUser("Administrator") != null)
+        {
+			<ul class="nav navbar-nav navbar-right">
+				<li>@Html.ActionLink("Home", "Index", "MainSite", null, new { @class = "" })</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.Administration <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						@Html.Partial("_Menu")
+					</ul>
+				</li>
+			</ul>
+        }
+	</div>
+</div>

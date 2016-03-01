@@ -1,0 +1,92 @@
+﻿@model AutoResponder.ViewModels.BR_UsersVM
+@using AutoResponder.Resources;
+@using System
+@using System.Web
+@using System.Web.Optimization
+@{
+    ViewBag.Title = Resources.Create + Resources.User;
+}
+
+<h2>@Resources.Create @Resources.User</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    Html.RenderPartial("_ValidationSummary");
+    <fieldset>
+        <legend>@Resources.Form</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.firstName)
+            @Html.ValidationMessageFor(model => model.firstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.middleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.middleName)
+            @Html.ValidationMessageFor(model => model.middleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lastName)
+            @Html.ValidationMessageFor(model => model.lastName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tags) <i><b>(ao colocar o focus, exibe as tags disponíveis)</b></i>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tags)
+            <strong>@ViewBag.TagExplanation</strong>
+            @Html.ValidationMessageFor(model => model.tags)
+        </div>
+        
+        <p>
+            <br />
+            <input type="submit" value="@Resources.Save" class="btn btn-primary" />
+            &nbsp;@Html.ActionLink("Voltar para a lista", "Index", null, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery_admin")
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Users/GetTags/",
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data);
+                var dataArray = data.split(/,/);
+                //console.log(dataArray);
+                availableTags = dataArray;
+                $("#tags").tagit({
+                    showAutocompleteOnFocus: true,
+                    availableTags: availableTags,
+                    singleFieldDelimiter: ' ',
+                    removeConfirmation: true
+                    //http://stackoverflow.com/questions/7500187/how-to-modify-jquery-tag-it-plugin-limit-number-of-tags-and-only-allow-availabl
+                });
+            },
+            error: function (data, textStatus, jqXHR) {
+            }
+        });
+
+    });
+</script>

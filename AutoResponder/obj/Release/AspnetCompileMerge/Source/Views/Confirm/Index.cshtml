@@ -1,0 +1,10 @@
+﻿@using System;
+@{
+    ViewBag.Title = "Resultado";
+    //Layout = "~/Views/Shared/_Layout_Stats.cshtml";
+}
+
+<h2>Resultado</h2>
+<div class="well">
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(ViewBag.Result))
+</div>

@@ -1,0 +1,76 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_UserEntryVM
+@using System
+@using System.Web
+@using System.Web.Optimization
+@{
+    ViewBag.Title = "Editar Entrada de Usuário";
+}
+
+<h2>Editar Entrada de Usuário</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    Html.RenderPartial("_ValidationSummary");
+    <fieldset>
+        <legend>Formulário</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.UserId, new SelectList(ViewBag.UserId, "idUser", "firstName", Model.UserId), "- selecione -") 
+            @Html.ValidationMessageFor(model => model.UserId)
+            <script> $("#UserId").val(@Model.UserId) </script>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SendingListId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.SendingListId, new SelectList(ViewBag.SendingListId, "Id", "Name", Model.SendingListId), "- selecione -") 
+            @Html.ValidationMessageFor(model => model.SendingListId)
+            <script> $("#SendingListId").val(@Model.SendingListId) </script>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EntryDate)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.EntryDate, true)
+            @Html.ValidationMessageFor(model => model.EntryDate)
+            <script>
+            	$("#EntryDate").mask("99/99/9999");
+            	//$("#EntryDate").datetimeEntry({ datetimeFormat: 'D/O/Y H:M:S', spinnerImage: '' });
+            	$(function () {
+            		var options = new Array();
+            		options['language'] = 'pt-BR';
+            		options['dateFormat'] = 'dd/mm/yy';
+            		options['format'] = 'dd/mm/yy';
+            		$('#EntryDate').datepicker(options);
+            	})
+            </script>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Optin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Optin)
+            @Html.ValidationMessageFor(model => model.Optin)
+        </div>
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.CREATION_DATE)
+        </div>
+
+        <p>
+            <br />
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+            &nbsp;@Html.ActionLink("Voltar para a lista", "Index", null, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery_admin")
+}

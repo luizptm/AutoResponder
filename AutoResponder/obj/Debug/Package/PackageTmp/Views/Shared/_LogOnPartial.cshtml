@@ -1,0 +1,31 @@
+﻿@using System.Web;
+@using System.Web.Optimization;
+@using AutoResponder.Resources;
+@using AutoResponder.Library.Security;
+@using AutoResponder.ViewModels;
+
+@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+<span>
+	@{
+		Login login = HttpContext.Current.Session["login"] == null ? null : (Login)HttpContext.Current.Session["login"];
+		if (login != null)
+		{
+			AccessControl ac = new AccessControl();
+			MembershipUser user = ac.GetUser();
+			CustomMembershipUser customUser = (CustomMembershipUser)user;
+			<small>
+				@Html.Raw(System.Web.HttpUtility.HtmlDecode(String.Format(Resources.Welcome, customUser.Name, customUser.RoleName)))
+                &nbsp;&nbsp;
+                @Html.ActionLink(Resources.ChangePassword, "ChangePassword", "Admin", null, new { @class = "" })
+				@using (Html.BeginForm("Logout", "Login", FormMethod.Post))
+				{
+					<a href="javascript: $('form').submit()">@Resources.LogOff</a>
+				}
+                
+			</small>
+		}
+	}
+</span>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_SendingListVM>
+@using System.Web.Mvc;
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewDataDictionary<BR_AutoResponder_SendingListVM> dic = new ViewDataDictionary<BR_AutoResponder_SendingListVM>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+        columns.Add(m => m.Id).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingListVM, int>(x => x.Id, dic).DisplayName);
+        columns.Add(m => m.Name).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingListVM, string>(x => x.Name, dic).DisplayName);
+		columns.Add(m => m.Tags).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_SendingListVM, string>(x => x.Tags, dic).DisplayName);
+        //columns.Add().Titled("Detalhes").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Detalhes", "Details", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Editar", "Edit", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        //columns.Add().Titled("Excluir").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Excluir", "Delete", new { Id = o.Id }, new {@class="btn btn-warning"}));
+    }).Sortable(true);
+}

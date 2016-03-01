@@ -1,0 +1,76 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_SendingListVM
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="title">Criar Lista</h4>
+</div>
+<script>
+    $("form").validate({
+        rules: {
+            Name: {
+                required: true
+            },
+            Description: {
+                required: true
+            },
+            TagId: {
+                required: true,
+                email: true
+            }
+        }
+    });
+</script>
+@using (Ajax.BeginForm("CreateSendingList", "MainSitePost", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "exibirMensagem(data, 'CreateSendingList')", OnFailure = "exibirErro" }, new { Id = "CreateLista", Role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="modal-body">
+        <span class="glyphicon glyphicon-asterisk small"></span> Campos obrigatórios
+        <br/><br/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.EditorFor(model => model.Name, "", "Name")
+            &nbsp;@Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.EditorFor(model => model.Description, "", "Description")
+            &nbsp;@Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tags)<span class="glyphicon glyphicon-asterisk small"></span>
+			<i><b>(ao colocar o focus, exibe as tags disponíveis)</b></i>:
+            @Html.EditorFor(model => model.Tags, "", "Tags")
+            &nbsp;@Html.ValidationMessageFor(model => model.Tags)
+            <script> $(".selectpicker").selectpicker(); </script>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CreateTag" data-remote="MainSite/CreateTag">Nova TAG</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+}
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.ajax({
+			url: "/MainSite/GetTags/",
+			success: function (data, textStatus, jqXHR) {
+				//console.log(data);
+				var dataArray = data.split(/,/);
+				//console.log(dataArray);
+				availableTags = dataArray;
+				$("#Tags").tagit({
+					showAutocompleteOnFocus: true,
+					availableTags: availableTags,
+					singleFieldDelimiter: ' ',
+					removeConfirmation: true
+				});
+			},
+			error: function (data, textStatus, jqXHR) {
+			}
+		});
+
+	});
+</script>

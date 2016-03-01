@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_AutoResponder_UserEntryVM>
+@using System.Web.Mvc;
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewDataDictionary<BR_AutoResponder_UserEntryVM> dic = new ViewDataDictionary<BR_AutoResponder_UserEntryVM>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+        columns.Add(m => m.Id).Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_UserEntryVM, int>(x => x.Id, dic).DisplayName);
+        columns.Add(m => m.BR_Users.firstName).RenderValueAs(o => o.BR_Users.firstName + " " + o.BR_Users.middleName + " " + o.BR_Users.lastName)
+            .Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_UserEntryVM, int>(x => x.UserId, dic).DisplayName)
+            .Sortable(true);
+        columns.Add(m => m.BR_AutoResponder_SendingList.Name)
+            .Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_UserEntryVM, int>(x => x.SendingListId, dic).DisplayName)
+            .Sortable(true);
+        columns.Add(m => m.EntryDate)
+            .Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_UserEntryVM, DateTime>(x => x.EntryDate, dic).DisplayName)
+            .Sortable(true);
+        columns.Add(m => m.Optin).RenderValueAs(o => o.Optin == true ? "Sim" : "Não")
+            .Titled(ModelMetadata.FromLambdaExpression<BR_AutoResponder_UserEntryVM, bool>(x => x.Optin, dic).DisplayName)
+            .Sortable(true);
+        //columns.Add().Titled("Detalhes").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Detalhes", "Details", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Editar", "Edit", new { Id = o.Id }, new { @class = "btn btn-default" }));
+        //columns.Add().Titled("Excluir").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Excluir", "Delete", new { Id = o.Id }, new {@class="btn btn-warning"}));
+    }).Sortable(true);
+}

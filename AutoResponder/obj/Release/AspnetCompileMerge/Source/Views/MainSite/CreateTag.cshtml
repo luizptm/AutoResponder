@@ -1,0 +1,42 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TagVM
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="title">Criar TAG</h4>
+</div>
+<script>
+    $("#CreateTag").validate({
+        rules: {
+            Name: {
+                required: true
+            },
+            Description: {
+                required: true
+            }
+        }
+    });
+</script>
+@using (Ajax.BeginForm("CreateTag", "MainSitePost", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "exibirMensagem(data, 'CreateTag')", OnFailure = "exibirErro" }, new { Id = "CreateTag", Role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="modal-body">
+        <span class="glyphicon glyphicon-asterisk small"></span> Campos obrigatórios
+        <br/><br/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)<span class="glyphicon glyphicon-asterisk small"></span> Os nomes são case-sensitive (ex.: Teste é diferente de TESTE):
+            @Html.EditorFor(model => model.Name, "", "Name")
+            &nbsp;@Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description)<span class="glyphicon glyphicon-asterisk small"></span>:
+            @Html.EditorFor(model => model.Description, "", "Description")
+            &nbsp;@Html.ValidationMessageFor(model => model.Description)
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+}

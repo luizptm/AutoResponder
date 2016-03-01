@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+@using System
+@using System.Web
+@using System.Web.Optimization
+
+<html lang="@(System.Globalization.CultureInfo.CurrentUICulture.Name)">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoResponder - @(ViewBag.Title)</title>
+    @Styles.Render("~/Content/css_bootstrap_min")
+    <link href="/Content/Site.css" rel="stylesheet" />
+    @*<style>
+        select, input
+        {
+            display: inline-block;
+            height: 35px;
+            padding: 4px 6px;
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: middle;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+    </style>*@
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    @if (HttpContext.Current.Request.IsLocal)
+    {
+        @*
+        @Scripts.Render("~/scripts/vendor_mvc")
+        @Scripts.Render("~/scripts/vendor_validation")
+        <script type="text/javascript" src="~/Scripts/jquery.validate.globalize.js"></script>
+        *@
+        @Scripts.Render("~/scripts/vendor_mvc_min")
+        @Scripts.Render("~/scripts/vendor_validation_min")
+        <script type="text/javascript" src="~/Scripts/jquery.validate.globalize.min.js"></script>
+    } else {
+        @Scripts.Render("~/scripts/vendor_mvc_min")
+        @Scripts.Render("~/scripts/vendor_validation_min")
+        <script type="text/javascript" src="~/Scripts/jquery.validate.globalize.min.js"></script>
+    }
+	@Scripts.Render("~/scripts/globalize")
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	@*
+	<div class="container">
+		<div class="panel panel-default">
+		<div class="panel-heading" style="background-color: #428bca; background-image: none;"></div>
+		<div class="panel-heading" style="background-color: #ffffff; background-image: none;">
+		</div>
+		<div class="panel-body" style="min-height: 80%">
+			@RenderBody()
+		</div>
+		<div class="panel-footer" style="background-color: #428bca; background-image: none;">
+			<p style="color:white;"><b>Proteste Associação de Consumidores</b></p>
+		</div>
+		</div>
+		<div class="footer">
+		</div>
+	</div>
+	*@
+	<div class="container" style="width: 600px;">
+		@RenderBody()
+	</div>
+</body>
+</html>

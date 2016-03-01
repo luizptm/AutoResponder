@@ -1,0 +1,66 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_SendingListVM
+@using System
+@using System.Web
+@using System.Web.Optimization
+@{
+    ViewBag.Title = "Editar Lista";
+}
+
+<h2>Editar Lista</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    Html.RenderPartial("_ValidationSummary");
+    <fieldset>
+        <legend>Formulário</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        @*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Interval)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Interval)
+            @Html.ValidationMessageFor(model => model.Interval)
+        </div>
+        *@
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TagId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.TagId, new SelectList(ViewBag.TagId, "Id", "Name", Model.TagId), "- selecione -")
+            @Html.ValidationMessageFor(model => model.TagId)
+            <script> $("#TagId").val(@Model.TagId) </script>
+        </div>
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.CREATION_DATE)
+        </div>
+
+        <p>
+            <br />
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+            &nbsp;@Html.ActionLink("Voltar para a lista", "Index", null, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery_admin")
+}

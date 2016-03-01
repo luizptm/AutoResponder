@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_bootstrap.cshtml";
+}
+
+<h2>Formulário para cadastro de lead</h2>
+<form action="Form" method="post">
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary(false)
+	Nome:&nbsp;<input type="text" id="Nome" name="Nome" required="required" value="" />&nbsp;&nbsp;
+	E-mail:&nbsp;<input type="email" id="Email" required="required" name="Email" value="" />&nbsp;&nbsp;
+	<input type="submit" id="enviar" /><br />
+</form>

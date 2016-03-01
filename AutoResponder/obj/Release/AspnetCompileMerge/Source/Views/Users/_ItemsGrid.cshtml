@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AutoResponder.ViewModels.BR_UsersVM>
+@using System.Web.Mvc;
+@using AutoResponder.Models.Entity;
+@using AutoResponder.ViewModels;
+@using GridMvc.Html;
+@using GridMvc.Sorting;
+@{
+    ViewDataDictionary<BR_UsersVM> dic = new ViewDataDictionary<BR_UsersVM>();
+}
+
+@{
+    @Html.Grid(Model).Named("dataGrid").Columns(columns =>
+    {
+        columns.Add(m => m.idUser).Titled(ModelMetadata.FromLambdaExpression<BR_UsersVM, int>(x => x.idUser, dic).DisplayName);
+        columns.Add(m => m.Fullname).Titled(ModelMetadata.FromLambdaExpression<BR_UsersVM, string>(x => x.Fullname, dic).DisplayName)
+            .RenderValueAs(o => string.Format("{0}{1}{2}", o.firstName, String.IsNullOrEmpty(o.middleName) ? 
+                " " + o.middleName : "", String.IsNullOrEmpty(o.lastName) ? " " + o.lastName : "")).Filterable(true);
+        columns.Add(m => m.email).Titled(ModelMetadata.FromLambdaExpression<BR_UsersVM, string>(x => x.email, dic).DisplayName)
+            .Filterable(true);
+        columns.Add(m => m.tags).Titled(ModelMetadata.FromLambdaExpression<BR_UsersVM, string>(x => x.tags, dic).DisplayName)
+            .RenderValueAs(o => o.tags != null && o.tags.Length >= 20 ? o.tags.Substring(0, 20) + "..." : o.tags)
+            .Filterable(true).SetFilterWidgetType("CustomTagsFilterWidget");
+        //columns.Add().Titled("Detalhes").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Detalhes", "Details", new { Id = o.idUser }, new { @class = "btn btn-default" }));
+        columns.Add().Titled("Editar").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Editar", "Edit", new { Id = o.idUser }, new { @class = "btn btn-default" }));
+        //columns.Add().Titled("Excluir").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Excluir", "Delete", new { Id = o.idUser }, new {@class="btn btn-warning"}));
+    }).Sortable(true);
+}

@@ -1,0 +1,67 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TemplateVM
+
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Subject):</b><br/>
+        @Html.DisplayFor(model => model.Subject)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.SendingListId):</b><br/>
+        @Html.DisplayFor(model => model.BR_AutoResponder_SendingList.Name)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Sequence):</b><br/>
+        @Html.DisplayFor(model => model.Sequence)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Interval):</b><br/>
+        @if (Model.Interval != null && !String.IsNullOrEmpty(Model.Interval.ToString()))
+        {
+            @Html.DisplayFor(model => model.Interval)
+        }
+        else
+        {
+            <span class="glyphicon glyphicon-minus"></span>
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Sender):</b><br/>
+        @Html.DisplayFor(model => model.Sender)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Body):</b><br/>
+        @*Html.DisplayFor(model => model.Body)*@
+        @if (!String.IsNullOrEmpty(Model.Body))
+        {
+            <button class="btn btn-primary" data-toggle="modal" data-target="#VerTemplate" 
+                data-remote="MainSite/VerTemplate/@Model.Id"
+                data-keyboard="true">Exibir</button>
+        }
+        else
+        {
+            <span class="glyphicon glyphicon-minus"></span>
+        }
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.CREATION_DATE):</b><br/>
+        @Html.DisplayFor(model => model.CREATION_DATE)
+    </div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new { @class = "btn btn-default" })
+</p>
+<p>
+    @Html.AntiForgeryToken()
+    <a class="btn btn-danger" onclick="javascript: return ExcluirRegistro();">Apagar</a>
+</p>
+@*using (Html.BeginForm("Delete", "Template", new { id=Model.Id }, FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="javascript: return ExcluirRegistro();" />
+    </p>
+}*@

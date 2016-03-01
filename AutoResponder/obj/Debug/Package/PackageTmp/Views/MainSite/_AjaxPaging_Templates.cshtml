@@ -1,0 +1,71 @@
+﻿@model PagedList.IPagedList<AutoResponder.ViewModels.TemplatesVM>
+@using AutoResponder.Resources;
+@using PagedList;
+@using PagedList.Mvc;
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped grid-table" style="padding: 10px;">
+        @foreach (var item in Model)
+        {
+            <tr class="grid-row">
+                @if (item.Sequence == 0)
+                {
+                    <td class="grid-header-title" colspan="3"><b>Template #0 (Optin)</b></td>
+                }
+                else
+                {
+                    <td class="grid-header-title" colspan="3"><b>Template #@item.Sequence</b></td>
+                }
+            </tr>
+            <tr class="grid-row">
+                @if (item.Sequence == 0 && item.Subject == "não-cadastrado")
+                {
+                     <td><button id="createTemplate" class="btn btn-primary" onclick="javascript: ShowCreateTemplate(0);">Criar</button></td>
+                }
+                else
+                {
+                    <td style="vertical-align: top; width: 30%;">
+                        <b><span class="badge pull-left" style="font-size: 15px;">@item.Subject</span></b><br />
+                        Intervalo <span class="badge pull-right">@(item.Sequence == 0 ? "0" : item.Interval.ToString()) dia(s)</span><br />
+                    </td>
+                    <td style="vertical-align: top; width: 20%;">
+                        Unsubscribe <span class="badge pull-right">@item.Unsubscribe</span><br />
+                        Open Mail <span class="badge pull-right">@item.OpenMail</span><br />
+                        Bounce <span class="badge pull-right">@item.Bounce</span><br />
+                        Click <span class="badge pull-right">@item.Click</span><br />
+                        @*<b>TOTAL</b> <span class="badge pull-right">@item.Sendings</span><br />*@
+                    </td>
+                    <td style="vertical-align: top; width: 50%; text-align: center;">
+                        <button id="exibirTemplate" class="btn btn-info" data-toggle="modal"
+                            data-target="#VerTemplate" data-remote="MainSite/VerTemplate/@item.TemplateId" data-keyboard="true">
+                            @Resources.ShowTemplate</button>
+                        <button id="showEditTemplate" class="btn btn-default" onclick="javascript: ShowEditTemplate(@item.TemplateId);">@Resources.Edit</button>
+                        <button id="deleteTemplate" class="btn btn-warning" onclick="javascript: DeleteTemplate(@item.TemplateId, '@item.Subject');">@Resources.Delete</button>
+	                    &nbsp;&nbsp;
+						<a href="/SpamCheck" class="btn btn-primary load" target="_blank">SPAM?</a>
+						&nbsp;&nbsp;
+                        <button id="testSendingTemplate" class="btn btn-default" data-toggle="modal"
+                            data-target="#TestSendingTemplate" data-remote="MainSite/TestSendingTemplate/?SendingList=@ViewBag.SendingList&id=@item.TemplateId" data-keyboard="true">
+                            @Resources.TestSending</button>
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+    <div>
+        Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Templates",
+            new { SendingList = ViewBag.SendingList, page }),
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.PageNumbersOnly, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "templates" }))
+    </div>
+}
+else
+{    
+    <table class="table table-striped grid-table">
+        <tr class="grid-empty-text">
+            <td>@Resources.NoDataToShow
+            </td>
+        </tr>
+    </table>
+}

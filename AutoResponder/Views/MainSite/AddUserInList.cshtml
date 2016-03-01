@@ -1,0 +1,69 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_UserEntryVM
+@using AutoResponder.Resources;
+@using System;
+@using System.Web;
+@using System.Web.Optimization;
+@{
+    ViewBag.Title = "Criar Entrada de Usuário";
+}
+
+<div id="divAddUserToList" class="panel panel-default">
+    <div class="panel-heading" style="font-size:large;">
+        Criar Entrada de Usuário
+    </div>
+    <div class="panel-body">
+		@using (Ajax.BeginForm("AddUserInList", "MainSitePost", null,
+			new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess(data)", OnFailure = "OnError" },
+			new { Id = "AddUserToListForm", Role = "form" }))
+		{
+			@Html.AntiForgeryToken()
+			@Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserId)
+                @Html.DropDownList("UserId", (SelectList)ViewBag.UserId, "- selecione -")
+                @Html.ValidationMessageFor(model => model.UserId)
+                <script>
+                    //$("#UserId").chosen();//NOT WORKING!
+                </script>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.SendingListId)<span class="glyphicon glyphicon-asterisk small"></span>:
+                @Html.DropDownList("SendingListIdShow", (SelectList)ViewBag.SendingListId, "- selecione -", new { disabled = "disabled", @class = "selectpicker" })
+                @Html.HiddenFor(model => model.SendingListId)
+                &nbsp;@Html.ValidationMessageFor(model => model.SendingListId)
+                <script>
+                    var SendingList = $("#SendingList").val();
+                    $("#SendingListIdShow").val(SendingList);
+                    $("#SendingListId").val(SendingList);
+                    $("#SendingListIdShow").selectpicker();
+                </script>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.EntryDate)
+                @Html.EditorFor(model => model.EntryDate, true)
+                @Html.ValidationMessageFor(model => model.EntryDate)
+                <script>
+                    $("#EntryDate").mask("99/99/9999");
+                	//$("#EntryDate").datetimeEntry({ datetimeFormat: 'D/O/Y H:M:S', spinnerImage: '' });
+                	$(function () {
+                		var options = new Array();
+                		options['language'] = 'pt-BR';
+                		options['dateFormat'] = 'dd/mm/yy';
+                		options['format'] = 'dd/mm/yy';
+                		$('#EntryDate').datepicker(options);
+                	})
+                </script>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Optin)
+                @Html.EditorFor(model => model.Optin)
+                @Html.ValidationMessageFor(model => model.Optin)
+            </div>
+            <div>
+                <button type="button" class="btn btn-default load" onclick="javascript: Usuarios();">Voltar para a lista</button>
+                <button type="submit" class="btn btn-primary load">Salvar</button>
+            </div>
+        }
+    </div>
+</div>

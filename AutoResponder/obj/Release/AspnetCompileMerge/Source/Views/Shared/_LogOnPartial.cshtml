@@ -1,0 +1,24 @@
+﻿@using System.Web
+@using System.Web.Optimization
+@using AutoResponder.lib.Security
+@using AutoResponder.ViewModels
+
+<span>
+	@{
+		Login login = HttpContext.Current.Session["login"] == null ? null : (Login)HttpContext.Current.Session["login"];
+		if (login != null)
+		{
+			AccessControl ac = new AccessControl();
+			MembershipUser user = ac.GetUser();
+			CustomMembershipUser customUser = (CustomMembershipUser)user;
+			string str = string.Format("Bem-vindo <b>{0}</b>, você está logado como <b>{1}</b>.", customUser.Name, customUser.RoleName);
+			<small>
+				@Html.Raw(System.Web.HttpUtility.HtmlDecode(str))
+				@using (Html.BeginForm("Logout", "Login", FormMethod.Post))
+				{
+					<a href="javascript: $('form').submit()">Log off</a>
+				}
+			</small>
+		}
+	}
+</span>

@@ -1,0 +1,82 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TemplateVM
+@using System
+@using System.Web
+@using System.Web.Optimization
+@{
+    ViewBag.Title = "Criar Template";
+}
+
+<h2>Criar Template</h2>
+
+<script>
+    $("form").validate({
+        rules: {
+            Body: {
+                //http://css.dzone.com/articles/using-jquery-validate-plugin
+                required: function (textarea) {
+                    CKEDITOR.instances[textarea.id].updateElement(); // update textarea
+                    var editorcontent = textarea.value.replace(/<[^>]*>/gi, ''); // strip tags
+                    return editorcontent.length === 0;
+                }
+            }
+        }
+    });
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    Html.RenderPartial("_ValidationSummary");
+    <fieldset>
+        <legend>Formulário</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SendingListId):
+            @Html.DropDownList("SendingListId", (SelectList)ViewBag.SendingListId, "- selecione -")
+            @Html.ValidationMessageFor(model => model.SendingListId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sequence):
+            @Html.TextBox("Sequence", "0", new { type = "number", min = "0",  max = "999" })
+            @Html.ValidationMessageFor(model => model.Sequence)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Interval):
+            @Html.TextBox("Interval", "0", new { type = "number", min = "0",  max = "999" })
+            @Html.ValidationMessageFor(model => model.Interval)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sender):
+            @Html.EditorFor(model => model.Sender)
+            @Html.ValidationMessageFor(model => model.Sender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Subject):
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body):
+            @Html.TextAreaFor(model => model.Body)
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    loadCKEditor('Body', false);
+                });
+            </script>
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+        <p>
+            <br />
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+            &nbsp;@Html.ActionLink("Voltar para a lista", "Index", null, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery_admin")
+}

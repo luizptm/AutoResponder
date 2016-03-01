@@ -1,0 +1,30 @@
+﻿@model AutoResponder.ViewModels.BR_AutoResponder_TagVM
+
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Name):</b><br/>
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.Description):</b><br/>
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayNameFor(model => model.CREATION_DATE):</b><br/>
+        @Html.DisplayFor(model => model.CREATION_DATE)
+    </div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new { @class = "btn btn-default" })
+</p>
+<p>
+    @Html.AntiForgeryToken()
+    <a class="btn btn-danger" onclick="javascript: return ExcluirRegistro();">Apagar</a>
+</p>
+@*using (Html.BeginForm("Delete", "Tag", new { id=Model.Id }, FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="javascript: return ExcluirRegistro();" />
+    </p>
+}*@

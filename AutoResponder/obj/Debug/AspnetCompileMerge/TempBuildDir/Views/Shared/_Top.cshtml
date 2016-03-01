@@ -1,0 +1,26 @@
+﻿<div class="container-fluid">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">
+            <a href="~/">Proteste AutoResponder</a>
+            &nbsp;&nbsp;
+            <small><b>@Html.Partial("_LogOnPartial")</b></small>
+        </span>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Home", "Index", "MainSite", null, new { @class = "" })</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administração <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    @Html.Partial("_Menu")
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
