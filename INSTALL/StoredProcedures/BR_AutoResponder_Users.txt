@@ -1,0 +1,14 @@
+﻿CREATE PROCEDURE BR_AutoResponder_Users
+	@PageNumber int,
+	@RowsPerPage int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT * 
+	FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY iduser) AS RowNum FROM BR_Users) AS u
+	WHERE RowNum 
+	BETWEEN ((@PageNumber-1)*@RowsPerPage)+1
+	AND @RowsPerPage*(@PageNumber)
+END
+GO

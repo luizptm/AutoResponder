@@ -1,0 +1,40 @@
+﻿CREATE PROCEDURE BR_AutoResponder_Unsubscribe
+	@param_TemplateId int,
+	@param_UserId int,
+	@@param_action varchar(50)
+AS
+BEGIN
+	DECLARE @_SendingListId int
+	
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	SET @_SendingListId = (SELECT TOP 1 Id From BR_AutoResponder_Sending WHERE UserId = @param_UserId AND TemplateId = @param_TemplateId)
+	
+	IF(ISNULL(@_SendingListId, '') <> '')
+	BEGIN
+		UPDATE BR_AutoResponder_UserEntry SET Optin = 0 WHERE UserId = @param_UserId AND SendingListId = @_SendingListId
+	END
+	select * from BR_AutoResponder_Sending
+	IF(ISNULL(@_SendingListId, '') <> '' and ISNULL(@@param_action, '') <> '')
+	BEGIN
+		if (@@param_action = 'b')
+		BEGIN
+			UPDATE BR_AutoResponder_Sending SET Bounce = 1 WHERE UserId = @param_UserId AND TemplateId = @param_TemplateId
+		END
+		else if (@@param_action = 'c')
+		BEGIN
+			UPDATE BR_AutoResponder_Sending SET Click = 1 WHERE UserId = @param_UserId AND TemplateId = @param_TemplateId
+		END
+		else if (@@param_action = 'o')
+		BEGIN
+			UPDATE BR_AutoResponder_Sending SET OpenMail = 1 WHERE UserId = @param_UserId AND TemplateId = @param_TemplateId
+		END
+		else if (@@param_action = 'u')
+		BEGIN
+			UPDATE BR_AutoResponder_Sending SET Unsubscribe = 1 WHERE UserId = @param_UserId AND TemplateId = @param_TemplateId
+		END
+	END
+END
+GO
